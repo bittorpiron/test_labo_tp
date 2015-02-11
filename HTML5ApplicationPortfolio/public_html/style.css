@@ -9,7 +9,7 @@ body {
     width: 800px;
     margin:auto;
 }
-#ligne {
+#ligne, #lignebas{
     height: 30px;
     background-color: #CC0000;
 }
@@ -65,7 +65,7 @@ body {
     }
 #basdepage {
     height: 120px;
-    background-color: #CC0000;     
+    background-color: #1A1A1A;     
     text-align: center;
 }
 #basdepage a{
