@@ -1,19 +1,98 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-<!-- HEAD délimite l'entête du document -->
-<meta charset="utf-8" >
-<title>Pou me contacter</title>
-</head>
-<body>
-<!-- BODY délimite le corps du document -->
-
-	<h1>INF2005 Hiver 2015</h1>
-		<br/>
-		<a href="mailto:bittorpiron@gmail.com">Victor Piron</a>
-		<br/>
-		UQÀM 
-		<br/>
+	<head>
+		<meta charset="utf-8" >
+		<title>Démo 2</title>
+		<meta name="author" content="Victor Piron">
+                <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+        <div id="page">
+        <div id="ligne">
+        </div>
+        <div id="entete">
+            <div id="entete_gauche">
+                <h2>Demande de information</h2>
+                <h1>Galerie d'Art Orhy</h1>
+            </div>
+	    <div id="entete_droite">
+                <img src="ressources/logo.png" alt="Txapela Buruan...">
+            </div>        
+        </div>
+        <div id="centre">
+            <hr/>            
+            <div id="menu">
+		<a href="index.html">À Propos...</a> |                
+		<a href="portfolio.html">Collections</a> |
+		<a href="#">Horaires des Ventes à l'encan</a> |
+		<a class="active" href="contact.html">Contact</a> |
+                <a href="connexion.html">Connexion</a>
+	    </div>
+		<form action="traitement.php" method="get">
+			<p>un paragraphe à l'intérieur du premier formulaire</p>
+			<label for="prenom">Prénom :</label>
+			<input type="text" name="prenom" id="prenom" size="30">
+			<br/>
+			<textarea name="commentaire" id="commentaire" readonly="readonly">texte par défault.</textarea>
+			<br/>	
+			<label for="nom">Nom :</label>
+			<input type="text" name="nom" id="nom" size="30">
+			<br/>
+			<label for="motdepasse">Password :</label>
+			<input type="password" name="motdepasse" id="motdepasse" size="30">		
+			<br>
+			<input type="reset" value="Vider">
+			<input type="submit" value="Envoyer">			
+		</form>
+		<p>un paragraphe après mon formulaire</p>
 		
-</body>
+		<form action="traitement.php" method="post">
+		<span>Cochez les sports que vous aimez.</span>
+			<br/>	
+			<label for="sport1">Futbol :</label>
+			<input type="checkbox" checked name="sport1" id="sport1" value="1">
+			<br/>	
+			<label for="sport2">Hockey :</label>
+			<input type="checkbox" name="sport2" id="sport2" value="1">
+			<br/>	
+			<label for="sport3">Tenis :</label>
+			<input type="checkbox" name="sport3" id="sport3" value="1">
+			<br>
+			<span>Veuillez indiquer votre sexe</span><br> 
+			<input type="radio" name="sexe" id="1" value="1">
+			<span>Masculin</span><br>
+			<input type="radio" name="sexe" id="2" value="2">
+			<span>Feminine</span><br>
+			<br>
+			<span>Dans quelle province habitez-vous ?</span><br> 
+			<input type="radio" name="province" value="quebec" id="quebec" checked="checked">
+			<label for="quebec">Qc.</label><br>
+			<input type="radio" name="province" value="ontario" id="ontario">
+			<label for="ontario">On.</label><br>
+			<input type="radio" name="province" value="alberta" id="alberta">
+			<label for="alberta">Al.</label><br>
+			<br>
+			<label for="ville">Dans quel ville habitez-vous :</label>
+            <select id="ville" name="ville">
+                <optgroup label="Québec">
+                <option value="montreal">Montréal</option>
+                <option value="laval">Laval</option>
+                </optgroup>
+                <optgroup label="Ontario">
+                <option value="toronto">Toronto</option>
+                <option value="otttawa">Ottawa</option>
+                </optgroup>
+                <optgroup label="Alberta">
+                <option value="calgary">Calgary</option>
+                <option value="edmonton">Edmonton</option>
+                </optgroup>
+            </select><br>
+			
+			
+			<input type="reset" value="Vider">
+			<input type="submit" value="Envoyer">
+		</form>	
+                </div>
+        </div>     
+	</body>
 </html>

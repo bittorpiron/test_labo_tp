@@ -15,7 +15,7 @@ body {
 }
   
 #entete {
-  height:160px
+  height:130px
 }
   
 #menu a {
@@ -42,17 +42,20 @@ body {
     padding-right: 20px;
     width: 340px;
     padding-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
 }
 
 #entete_droite {
    float:left;
+   margin-top: 15px;
    margin-right: 20px;
    width: 180px; 
    margin-left:200px; 
 }
 
+#entete_droite img{
+    max-width: 50%;
+
+}
 #centre {
 
 }
@@ -61,10 +64,14 @@ body {
     height: auto;
     }
 #basdepage {
-    height: 130px;
-    background-color: #CC0000;
-    line-height: 80px;        
+    height: 120px;
+    background-color: #CC0000;     
     text-align: center;
+}
+#basdepage a{
+    
+    line-height: 120px; 
+    color: #FFFFFF;
 }
 
 h1 {    
