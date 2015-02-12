@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" >
-		<title>Démo 2</title>
+		<title>Orhy - Contact</title>
 		<meta name="author" content="Victor Piron">
                 <link rel="stylesheet" type="text/css" href="style.css">
 	</head>
@@ -23,12 +23,12 @@
             <hr/>            
             <div id="menu">
 		<a href="index.html">À Propos...</a> |                
-		<a href="portfolio.html">Collections</a> |
-		<a href="#">Horaires des Ventes à l'encan</a> |
+		<a href="collections.html">Collections</a> |
+		<a href="horaire.html">Ventes à l'encan</a> |
 		<a class="active" href="contact.html">Contact</a> |
                 <a href="connexion.html">Connexion</a>
 	    </div>
-		<form action="traitement.php" method="get">
+		<form action="traitement.php" method="post">
 			<p>un paragraphe à l'intérieur du premier formulaire</p>
 			<label for="prenom">Prénom :</label>
 			<input type="text" name="prenom" id="prenom" size="30">
@@ -41,13 +41,7 @@
 			<label for="motdepasse">Password :</label>
 			<input type="password" name="motdepasse" id="motdepasse" size="30">		
 			<br>
-			<input type="reset" value="Vider">
-			<input type="submit" value="Envoyer">			
-		</form>
-		<p>un paragraphe après mon formulaire</p>
-		
-		<form action="traitement.php" method="post">
-		<span>Cochez les sports que vous aimez.</span>
+                        <span>Cochez les sports que vous aimez.</span>
 			<br/>	
 			<label for="sport1">Futbol :</label>
 			<input type="checkbox" checked name="sport1" id="sport1" value="1">
@@ -72,27 +66,25 @@
 			<input type="radio" name="province" value="alberta" id="alberta">
 			<label for="alberta">Al.</label><br>
 			<br>
-			<label for="ville">Dans quel ville habitez-vous :</label>
+            <label for="ville">Dans quel ville habitez-vous :</label>
             <select id="ville" name="ville">
                 <optgroup label="Québec">
                 <option value="montreal">Montréal</option>
                 <option value="laval">Laval</option>
                 </optgroup>
-                <optgroup label="Ontario">
+                <optgroup label="Pays Basque">
                 <option value="toronto">Toronto</option>
                 <option value="otttawa">Ottawa</option>
                 </optgroup>
-                <optgroup label="Alberta">
-                <option value="calgary">Calgary</option>
-                <option value="edmonton">Edmonton</option>
-                </optgroup>
-            </select><br>
-			
-			
+             </select><br>			
 			<input type="reset" value="Vider">
 			<input type="submit" value="Envoyer">
 		</form>	
                 </div>
+            <div id="lignebas"></div>
+            <div id="basdepage">
+             <a href="mailto:bittorpiron@gmail.com">@Copyright 2015 Orhy | Une production Victor Piron</a>
+        </div> 
         </div>     
 	</body>
 </html>

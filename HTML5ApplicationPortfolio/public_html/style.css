@@ -1,41 +1,23 @@
 body {
-
-    font-size:12pt;
+    background-color: #F0F0F0;
+    font-size:16px;
     font-family: Arial;
     color: #000000;
-}
-
-#page {
-    width: 800px;
-    margin:auto;
 }
 #ligne, #lignebas{
     height: 30px;
     background-color: #CC0000;
 }
-  
+
+#page {
+    background-color: white;
+    width: 800px;
+    margin:auto;
+}
+
 #entete {
-  height:130px
+    height:100px
 }
-  
-#menu a {
-        display: inlinecompact;
-        padding: 6px;
-	height:25px;
-	font-size:14px;
-	font-weight:bold;
-}
-  
-  
-#menu a:hover, #menu a.active {
-    	background-color:#CC0000;
-	color:#FFFFFF;
-}
-
-#info {
-        margin-top: 30px;
-}
-
 #entete_gauche { 
     float:left;
     margin-right: 20px;
@@ -45,43 +27,67 @@ body {
 }
 
 #entete_droite {
-   float:left;
-   margin-top: 15px;
-   margin-right: 20px;
-   width: 180px; 
-   margin-left:200px; 
+    float:left;
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 180px; 
+    margin-left:200px; 
 }
 
 #entete_droite img{
     max-width: 50%;
-
 }
+
 #centre {
-
+    margin: 20px;
 }
+#menu {
+    margin: 15px;
+}
+#menu a {
+    display: inlinecompact;
+    padding: 5px;
+    height:25px;
+    font-size:14px;
+    font-weight:bold;
+}  
+#menu a:hover, #menu a.active {
+    background-color:#CC0000;
+    color:#FFFFFF;
+}
+
+#info {
+    padding: 20px;
+}
+
 #info img {
-    max-width: 100%;
+    float:left; 
+    max-width: 50%;
     height: auto;
-    }
+    margin-right: 20px;
+}
+#info p {
+    text-indent: 10px;
+}
 #basdepage {
     height: 120px;
     background-color: #1A1A1A;     
     text-align: center;
 }
 #basdepage a{
-    
     line-height: 120px; 
     color: #FFFFFF;
 }
 
 h1 {    
-    font-size:25pt;
+    font-size:30px;
     color:#000033;     
 }
 
 h2 {
-    font-size:20pt;
+    font-size:25px;
     color:#000033;
+    line-height: 20px;
 }
 
 hr
@@ -93,3 +99,68 @@ a {
     text-decoration: none;
     color: #CC0000
 }
+
+li {
+    line-height: 20px;
+}
+
+li a {
+     color: #000000;     
+}
+
+ul,ol {
+     padding-left: 50px; 
+     padding-right: 50px;    
+}
+
+ul li {
+     list-style-image: url(ressources/pointrouge.jpg);    
+}
+
+#liste1, #liste2{
+    height: 110px;
+    margin: 10px;
+}
+
+#liste1 ul{
+    float:left;   
+    margin: 0px;
+}
+
+#tableaux img {
+    float:right; 
+    height: 150px;
+
+    margin-left: 10px;
+    margin-right: 60px;
+}
+
+#tableaux p {
+    padding: 0px 20px;
+    height: 150px;    
+}
+
+table, td, th{ 
+       height: 40px;
+}
+table{    
+    border-collapse: collapse;
+    margin: auto;
+    width: 80%;
+}
+th{
+    background-color: #CC0000;
+    color:#FFFFFF;
+    border: 1px solid black;
+    width: 100px;
+}
+td{
+    padding:5px;
+    text-align:center;
+    border: 1px solid black;
+}
+#empty,#empty1
+{
+    border: 0px;
+}
+
