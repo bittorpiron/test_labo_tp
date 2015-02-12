@@ -96,10 +96,11 @@ hr
 }
 
 a {
+    
     text-decoration: none;
     color: #CC0000
 }
-
+a:hover { color: #CC0000}
 li {
     line-height: 20px;
 }
@@ -159,8 +160,8 @@ td{
     text-align:center;
     border: 1px solid black;
 }
+
 #empty,#empty1
 {
     border: 0px;
 }
-
