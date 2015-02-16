@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!--
+@Copyright Victor Piron Mardones.
+-->
 <html>
     <head>
         <meta charset="utf-8" >
@@ -18,43 +21,53 @@
                     <img src="ressources/logo.png" alt="Txapela Buruan...">
                 </div>        
             </div>
-            <div id="centre">
-                <hr/>            
+            <div id="centre">                <hr/>            
                 <div id="menu">
                     <a href="index.html">À Propos...</a> |                
                     <a href="collections.html">Collections</a> |
                     <a href="horaire.html">Ventes à l'encan</a> |
                     <a href="contact.html">Contact</a> |
-                    <a class="active" href="connexion.html">Connexion</a>
+                    <a class="active" href="connexion.html">Connexion / Inscription</a>
                 </div>
-
-                <form action="conxion.php" method="get">
-                    
-                    
-                    <p>Déjà instrit:</p>  
-                    <label for="identifiant">Identifiant</label>
-                    <input type="text" name="identifiant" id="identifiant" size="30">
+                <div id="connexion">
+                    <h2>Zone réservé aux membres inscrits</h2>   
+                    <form id="formulaire" action="connexion.php" method="post">
+                        <fieldset id="fieldconnexion"> 
+                            <legend id="legconnexion">Connexion</legend>
+                            <fieldset> 
+                                <legend>Idéntifification</legend>
+                                <br/><label for="question">Je veux m'inscrire</label>                    
+                                <input type="checkbox" name="question" id="question" value="1"><br/><br/>
+                                <label for="identifiant">Identifiant:</label><br/>
+                                <input type="text" name="identifiant" id="identifiant" size="30" autofocus required><br/><br/>
+                                <label for="motdepasse">Mot de passe:</label><br/>
+                                <input type="password" name="motdepasse" id="motdepasse" size="30" required><br/>
+                                <br/>
+                            </fieldset> 
+                            <br/>
+                            <fieldset> 
+                                <legend>Inscription</legend>
+                                <br/><label for="prenom">Prénom :</label><br/>
+                                <input type="text" name="prenom" id="prenom" size="30"><br/><br/>
+                                <label for="nom">Nom :</label><br/>
+                                <input type="text" name="nom" id="nom" size="30"><br/><br/>
+                                <label for="motdepasse">Confirmer Password :</label><br/>
+                                <input type="password" name="motdepasse" id="confirmermotdepasse" size="30"><br/>
+                                <br/>
+                            </fieldset>
+                            <br/>
+                            <input type="submit" value="Connexion">
+                        </fieldset>
+                    </form>    
                     <br/>
-                    <label for="motdepasse">Password</label>
-                    <input type="password" name="motdepasse" id="motdepasse" size="30">		
-                    <br>
-                    <label for="question">Je ne suis pas inscrit</label>
-			<input type="checkbox" name="question" id="question" value="1">
-                    <br>
-                    <p>Inscription</p>
-                    
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" name="prenom" id="prenom" size="30">
-                    <br/>
-                    <label for="nom">Nom :</label>
-                    <input type="text" name="nom" id="nom" size="30">
-                    <br/>
-	
+                    <form id="formulaire_sortie" action="conexion.php" method="post">    
+                        <fieldset id="fielddeconnexion"> 
+                            <legend  id="legfermeture">Fermeture de session</legend>
+                            <input type="submit" value="Déconnexion">
+                        </fieldset> 
+                    </form>
 
-
-                    <input type="reset" value="Vider">
-                    <input type="submit" value="Envoyer">			
-                </form>
+                </div>
             </div>
             <div id="lignebas"></div>
             <div id="basdepage">

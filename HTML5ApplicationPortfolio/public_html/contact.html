@@ -1,90 +1,103 @@
 <!DOCTYPE html>
+<!--
+@Copyright Victor Piron Mardones.
+-->
 <html>
-	<head>
-		<meta charset="utf-8" >
-		<title>Orhy - Contact</title>
-		<meta name="author" content="Victor Piron">
-                <link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
+    <head>
+        <meta charset="utf-8" >
+        <title>Orhy - Contact</title>
+        <meta name="author" content="Victor Piron">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
         <div id="page">
-        <div id="ligne">
-        </div>
-        <div id="entete">
-            <div id="entete_gauche">
-                <h2>Demande de information</h2>
-                <h1>Galerie d'Art Orhy</h1>
+            <div id="ligne">
             </div>
-	    <div id="entete_droite">
-                <img src="ressources/logo.png" alt="Txapela Buruan...">
-            </div>        
-        </div>
-        <div id="centre">
-            <hr/>            
-            <div id="menu">
-		<a href="index.html">À Propos...</a> |                
-		<a href="collections.html">Collections</a> |
-		<a href="horaire.html">Ventes à l'encan</a> |
-		<a class="active" href="contact.html">Contact</a> |
-                <a href="connexion.html">Connexion</a>
-	    </div>
-		<form action="traitement.php" method="post">
-			<p>un paragraphe à l'intérieur du premier formulaire</p>
-			<label for="prenom">Prénom :</label>
-			<input type="text" name="prenom" id="prenom" size="30">
-			<br/>
-			<textarea name="commentaire" id="commentaire" readonly="readonly">texte par défault.</textarea>
-			<br/>	
-			<label for="nom">Nom :</label>
-			<input type="text" name="nom" id="nom" size="30">
-			<br/>
-			<label for="motdepasse">Password :</label>
-			<input type="password" name="motdepasse" id="motdepasse" size="30">		
-			<br>
-                        <span>Cochez les sports que vous aimez.</span>
-			<br/>	
-			<label for="sport1">Futbol :</label>
-			<input type="checkbox" checked name="sport1" id="sport1" value="1">
-			<br/>	
-			<label for="sport2">Hockey :</label>
-			<input type="checkbox" name="sport2" id="sport2" value="1">
-			<br/>	
-			<label for="sport3">Tenis :</label>
-			<input type="checkbox" name="sport3" id="sport3" value="1">
-			<br>
-			<span>Veuillez indiquer votre sexe</span><br> 
-			<input type="radio" name="sexe" id="1" value="1">
-			<span>Masculin</span><br>
-			<input type="radio" name="sexe" id="2" value="2">
-			<span>Feminine</span><br>
-			<br>
-			<span>Dans quelle province habitez-vous ?</span><br> 
-			<input type="radio" name="province" value="quebec" id="quebec" checked="checked">
-			<label for="quebec">Qc.</label><br>
-			<input type="radio" name="province" value="ontario" id="ontario">
-			<label for="ontario">On.</label><br>
-			<input type="radio" name="province" value="alberta" id="alberta">
-			<label for="alberta">Al.</label><br>
-			<br>
-            <label for="ville">Dans quel ville habitez-vous :</label>
-            <select id="ville" name="ville">
-                <optgroup label="Québec">
-                <option value="montreal">Montréal</option>
-                <option value="laval">Laval</option>
-                </optgroup>
-                <optgroup label="Pays Basque">
-                <option value="toronto">Toronto</option>
-                <option value="otttawa">Ottawa</option>
-                </optgroup>
-             </select><br>			
-			<input type="reset" value="Vider">
-			<input type="submit" value="Envoyer">
-		</form>	
+            <div id="entete">
+                <div id="entete_gauche">
+                    <h2>Demande de information</h2>
+                    <h1>Galerie d'Art Orhy</h1>
                 </div>
-            <div id="lignebas"></div>
-            <div id="basdepage">
-             <a href="mailto:bittorpiron@gmail.com">@Copyright 2015 Orhy | Une production Victor Piron</a>
-        </div> 
-        </div>     
-	</body>
+                <div id="entete_droite">
+                    <img src="ressources/logo.png" alt="Txapela Buruan...">
+                </div>        
+            </div>
+            <div id="centre">
+                <hr/>            
+                <div id="menu">
+                    <a href="index.html">À Propos...</a> |                
+                    <a href="collections.html">Collections</a> |
+                    <a href="horaire.html">Ventes à l'encan</a> |
+                    <a class="active" href="contact.html">Contact</a> |
+                    <a href="connexion.html">Connexion  / Inscription</a>
+                </div>
+                <div id="connexion">
+                    <h2>Demande d'information / Inscription</h2>  
+                    <p>Vous avez des questions ou des commentaires,
+                        n’hésitez pas à communiquer avec nous. Il nous fera plaisir de vous répondre dès que possible.</p>
+                    <form id="formulaire_contact" action="contact.php" method="post">
+                        <fieldset> 
+                            <legend>Contact</legend>
+                            <label for="nom">Nom :</label><br/>
+                            <input type="text" name="nom" id="nom" size="30"><br/>
+                            <label for="email">Addresse courriel:</label><br/>
+                            <input type="text" name="email" id="email" size="30" required><br/>
+                            <label for="commentaire">Vos commentaires, quéstions:</label><br/>    
+                            <textarea name="commentaire" id="commentaire">texte par défault.</textarea>
+                            <br/>	
+                        </fieldset> 
+                        <fieldset> 
+                            <legend>Sondage</legend>                             
+                            <span>Cochez les sports que vous aimez.</span>
+                            <br/>	
+                            <label for="sport1">Futbol :</label>
+                            <input type="checkbox" checked name="sport1" id="sport1" value="1">
+                            <br/>	
+                            <label for="sport2">Hockey :</label>
+                            <input type="checkbox" name="sport2" id="sport2" value="1">
+                            <br/>	
+                            <label for="sport3">Tenis :</label>
+                            <input type="checkbox" name="sport3" id="sport3" value="1">
+                            <br>
+                            <span>Veuillez indiquer votre sexe</span><br> 
+                            <input type="radio" name="sexe" id="1" value="1">
+                            <span>Masculin</span><br>
+                            <input type="radio" name="sexe" id="2" value="2">
+                            <span>Feminine</span><br>
+                            <br>
+                            <span>Dans quelle province habitez-vous ?</span><br> 
+                            <input type="radio" name="province" value="quebec" id="quebec" checked="checked">
+                            <label for="quebec">Qc.</label><br>
+                            <input type="radio" name="province" value="ontario" id="ontario">
+                            <label for="ontario">On.</label><br>
+                            <input type="radio" name="province" value="alberta" id="alberta">
+                            <label for="alberta">Al.</label><br>
+                            <br>
+                            <label for="ville">Dans quel ville habitez-vous :</label>
+                            <select id="ville" name="ville">
+                                <optgroup label="Québec">
+                                    <option value="montreal">Montréal</option>
+                                    <option value="laval">Laval</option>
+                                </optgroup>
+                                <optgroup label="Pays Basque">
+                                    <option value="toronto">Toronto</option>
+                                    <option value="otttawa">Ottawa</option>
+                                </optgroup>
+                            </select><br>	
+
+                        </fieldset> 
+
+
+
+                        <input type="reset" value="Vider">
+                        <input type="submit" value="Envoyer">
+
+                    </form>	
+                </div></div> 
+                <div id="lignebas"></div>
+                <div id="basdepage">
+                    <a href="mailto:bittorpiron@gmail.com">@Copyright 2015 Orhy | Une production Victor Piron</a>
+                </div> 
+                </div> 
+    </body>
 </html>
