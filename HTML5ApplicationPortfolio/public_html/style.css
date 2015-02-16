@@ -1,14 +1,18 @@
 body {
     background-color: #F0F0F0;
+/*    background-color:#000033;*/
     font-size:16px;
     font-family: Arial;
     color: #000000;
 }
-#ligne, #lignebas{
+#ligne{
     height: 30px;
     background-color: #CC0000;
 }
-
+#lignebas{
+    height: 15px;
+    background-color: #CC0000;
+}
 #page {
     background-color: white;
     width: 800px;
@@ -16,7 +20,7 @@ body {
 }
 
 #entete {
-    height:100px
+    height:110px
 }
 #entete_gauche { 
     float:left;
@@ -45,7 +49,6 @@ body {
     margin: 15px;
 }
 #menu a {
-    display: inlinecompact;
     padding: 5px;
     height:25px;
     font-size:14px;
@@ -69,9 +72,10 @@ body {
 #info p {
     text-indent: 10px;
 }
+
 #basdepage {
     height: 120px;
-    background-color: #1A1A1A;     
+    background-color: #292929;     
     text-align: center;
 }
 #basdepage a{
@@ -87,20 +91,17 @@ h1 {
 h2 {
     font-size:25px;
     color:#000033;
-    line-height: 20px;
+    line-height: 25px;
 }
 
-hr
-{
-    height:1px;
-}
-
-a {
-    
+a {    
     text-decoration: none;
     color: #CC0000
 }
-a:hover { color: #CC0000}
+a:hover {
+    color: #CC0000
+}
+
 li {
     line-height: 20px;
 }
@@ -110,17 +111,20 @@ li a {
 }
 
 ul,ol {
-     padding-left: 50px; 
-     padding-right: 50px;    
+     padding-left: 40px; 
+     padding-right: 40px;    
 }
 
 ul li {
      list-style-image: url(ressources/pointrouge.jpg);    
 }
 
+#liste1, #liste2, #tableaux{
+    margin: auto;
+    width: 90%;
+}
 #liste1, #liste2{
     height: 110px;
-    margin: 10px;
 }
 
 #liste1 ul{
@@ -131,7 +135,6 @@ ul li {
 #tableaux img {
     float:right; 
     height: 150px;
-
     margin-left: 10px;
     margin-right: 60px;
 }
@@ -141,13 +144,34 @@ ul li {
     height: 150px;    
 }
 
+#tableau{ 
+    float:top; 
+    margin: auto;
+    width: 90%;
+}
+#infos { 
+    float:top; 
+    padding: 20px;   
+}
+#infos p{ 
+    font-size:20px;
+    font-weight:bold;    
+}
 table, td, th{ 
        height: 40px;
 }
 table{    
     border-collapse: collapse;
-    margin: auto;
-    width: 80%;
+
+}
+
+table a {
+    color:#FFFFFF;
+}
+table a:hover {
+    padding:10px;
+    background-color:#FFFFFF;
+    color:#CC0000;
 }
 th{
     background-color: #CC0000;
@@ -164,4 +188,56 @@ td{
 #empty,#empty1
 {
     border: 0px;
+}
+
+#connexion
+{
+    margin: auto;
+    width: 90%;
+    padding-bottom: 20px;
+}
+
+:required
+{
+    margin: auto;
+    border-color: #CC0000;
+}
+
+#formulaire, #formulaire_sortie
+{
+   margin:auto;
+   width: 50%;
+}
+#formulaire_contact
+{
+   margin:auto;
+   width: 90%;
+}
+
+fieldset{
+   border-color: #000033;
+   border-radius: 8px;
+   background-color: #F0F0F0;
+   
+}
+
+#fieldconnexion, #fielddeconnexion{
+   border-color: #CC0000;
+   background-color: white;
+}
+
+legend{
+    color:#000033;
+    font-size: 20px;
+}
+
+#legconnexion, #legfermeture{ 
+    color: #CC0000;
+    font-weight:bold;
+}
+
+textArea{
+    height:150px;
+    max-width:800px;
+    min-width:500px;
 }
