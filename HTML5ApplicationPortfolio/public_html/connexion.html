@@ -14,7 +14,7 @@
             <div id="ligne"></div>
             <div id="entete">
                 <div id="entete_gauche">
-                    <h2>Conexion / Inscription</h2>
+                    <h2>Connexion / Inscription</h2>
                     <h1>Galerie d'Art Orhy</h1>
                 </div>
                 <div id="entete_droite">
@@ -30,12 +30,12 @@
                     <a class="active" href="connexion.html">Connexion / Inscription</a>
                 </div>
                 <div id="connexion">
-                    <h2>Zone réservé aux membres inscrits</h2>   
+                    <h2>Zone réservée aux membres inscrits</h2>   
                     <form id="formulaire" action="connexion.php" method="post">
                         <fieldset id="fieldconnexion"> 
                             <legend id="legconnexion">Connexion</legend>
                             <fieldset> 
-                                <legend>Idéntifification</legend>
+                                <legend>Idéntification</legend>
                                 <br/><label for="question">Je veux m'inscrire</label>                    
                                 <input type="checkbox" name="question" id="question" value="1"><br/><br/>
                                 <label for="identifiant">Identifiant:</label><br/>
@@ -47,26 +47,25 @@
                             <br/>
                             <fieldset> 
                                 <legend>Inscription</legend>
-                                <br/><label for="prenom">Prénom :</label><br/>
+                                <br/><label for="prenom">Prénom:</label><br/>
                                 <input type="text" name="prenom" id="prenom" size="30"><br/><br/>
-                                <label for="nom">Nom :</label><br/>
+                                <label for="nom">Nom:</label><br/>
                                 <input type="text" name="nom" id="nom" size="30"><br/><br/>
-                                <label for="motdepasse">Confirmer Password :</label><br/>
+                                <label for="motdepasse">Confirmer mot de passe:</label><br/>
                                 <input type="password" name="motdepasse" id="confirmermotdepasse" size="30"><br/>
                                 <br/>
                             </fieldset>
                             <br/>
-                            <input type="submit" value="Connexion">
+                            <input  id="submitbouton" type="submit" value="Connexion">
                         </fieldset>
                     </form>    
                     <br/>
                     <form id="formulaire_sortie" action="conexion.php" method="post">    
                         <fieldset id="fielddeconnexion"> 
                             <legend  id="legfermeture">Fermeture de session</legend>
-                            <input type="submit" value="Déconnexion">
+                            <input id="connexionbouton" type="submit" value="Déconnexion">
                         </fieldset> 
                     </form>
-
                 </div>
             </div>
             <div id="lignebas"></div>

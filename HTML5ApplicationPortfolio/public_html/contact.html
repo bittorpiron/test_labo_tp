@@ -15,7 +15,7 @@
             </div>
             <div id="entete">
                 <div id="entete_gauche">
-                    <h2>Demande de information</h2>
+                    <h2>Demande d'information</h2>
                     <h1>Galerie d'Art Orhy</h1>
                 </div>
                 <div id="entete_droite">
@@ -32,72 +32,85 @@
                     <a href="connexion.html">Connexion  / Inscription</a>
                 </div>
                 <div id="connexion">
-                    <h2>Demande d'information / Inscription</h2>  
+                    <h2>Demande d'information</h2>  
                     <p>Vous avez des questions ou des commentaires,
                         n’hésitez pas à communiquer avec nous. Il nous fera plaisir de vous répondre dès que possible.</p>
                     <form id="formulaire_contact" action="contact.php" method="post">
                         <fieldset> 
                             <legend>Contact</legend>
-                            <label for="nom">Nom :</label><br/>
+                            <label for="nom">Nom:</label><br/>
                             <input type="text" name="nom" id="nom" size="30"><br/>
-                            <label for="email">Addresse courriel:</label><br/>
+                            <label for="email">Adresse courriel:</label><br/>
                             <input type="text" name="email" id="email" size="30" required><br/>
-                            <label for="commentaire">Vos commentaires, quéstions:</label><br/>    
+                            <label for="commentaire">Vos commentaires, questions:</label><br/>    
                             <textarea name="commentaire" id="commentaire">texte par défault.</textarea>
                             <br/>	
                         </fieldset> 
+                        <br/>
                         <fieldset> 
-                            <legend>Sondage</legend>                             
-                            <span>Cochez les sports que vous aimez.</span>
+                            <legend>Sondage volontaire</legend>                             
+                            <span>Cochez les styles que vous aimez:</span>
                             <br/>	
-                            <label for="sport1">Futbol :</label>
-                            <input type="checkbox" checked name="sport1" id="sport1" value="1">
-                            <br/>	
-                            <label for="sport2">Hockey :</label>
-                            <input type="checkbox" name="sport2" id="sport2" value="1">
-                            <br/>	
-                            <label for="sport3">Tenis :</label>
-                            <input type="checkbox" name="sport3" id="sport3" value="1">
+                            <input type="checkbox" checked name="art" id="choix0" value="0">
+                            <label for="choix0">Tous en général</label>
+                            <br/>
+                            <input type="checkbox" name="art" id="choix1" value="1">
+                            <label for="choix1">Abstrait</label>
+                            <br/>
+                            <input type="checkbox" name="art" id="choix2" value="2">
+                            <label for="choix2">Figuratif</label>
+                            <br/>
+                            <input type="checkbox" name="art" id="choix3" value="3">
+                            <label for="choix3">Réaliste</label>
+                            <br/>
+                            <input type="checkbox" name="art" id="choix4" value="4">
+                            <label for="choix4">Naturaliste</label>
+                            <br/><br/>
+                            <span>Veuillez indiquer votre catégorie d'âge:</span><br> 
+                            <input type="radio" name="age" id="age1" value="1">
+                            <label for="age1">Moins de 18 ans</label><br/>
+                            <input type="radio" name="age" id="age2" value="2">
+                            <label for="age2">Entre 18 et 35 ans</label><br/>
+                            <input type="radio" name="age" id="age3" value="3">
+                            <label for="age3">Entre 35 et 55 ans</label><br/>
+                            <input type="radio" name="age" id="age4" value="4">
+                            <label for="age4">Plus de 55 ans</label><br/>
                             <br>
-                            <span>Veuillez indiquer votre sexe</span><br> 
-                            <input type="radio" name="sexe" id="1" value="1">
-                            <span>Masculin</span><br>
-                            <input type="radio" name="sexe" id="2" value="2">
-                            <span>Feminine</span><br>
-                            <br>
-                            <span>Dans quelle province habitez-vous ?</span><br> 
-                            <input type="radio" name="province" value="quebec" id="quebec" checked="checked">
-                            <label for="quebec">Qc.</label><br>
-                            <input type="radio" name="province" value="ontario" id="ontario">
-                            <label for="ontario">On.</label><br>
-                            <input type="radio" name="province" value="alberta" id="alberta">
-                            <label for="alberta">Al.</label><br>
-                            <br>
-                            <label for="ville">Dans quel ville habitez-vous :</label>
+                            <label for="ville">Dans quelle ville habitez-vous:</label>
                             <select id="ville" name="ville">
                                 <optgroup label="Québec">
                                     <option value="montreal">Montréal</option>
-                                    <option value="laval">Laval</option>
+                                    <option value="quebec">Québec</option>
+                                    <option value="rmontreal">Région de Montréal</option>
+                                    <option value="rquebec">Région de la Capitale Nationale</option>
+                                    <option value="qautre">Autre région...</option>
                                 </optgroup>
-                                <optgroup label="Pays Basque">
-                                    <option value="toronto">Toronto</option>
-                                    <option value="otttawa">Ottawa</option>
+                                <optgroup label="Pays Basque-Euskal Herria">
+                                    <option value="gasteiz">Gasteiz-Vitoria</option>
+                                    <option value="donostia">Donostia-San Sebastian</option>
+                                    <option value="bilbo">Bilbo-Bilbao</option>
+                                    <option value="iruina">Iruina-Pamplona</option>
+                                    <option value="iruina">Bayonne-Baiona</option>
+                                    <option value="ehautre">Autre ville...</option>
+                                </optgroup>
+                                <optgroup label="Autre">
+                                    <option value="europa">Amérique</option>
+                                    <option value="donostia">Europe</option>
+                                    <option value="donostia">Afrique</option>
+                                    <option value="donostia">Asie</option>
+                                    <option value="donostia">Océanie</option>
                                 </optgroup>
                             </select><br>	
-
-                        </fieldset> 
-
-
-
-                        <input type="reset" value="Vider">
-                        <input type="submit" value="Envoyer">
-
+                        </fieldset><br/> 
+                        <input id="resetbouton" type="reset" value="Vider"/>
+                        <input id="submitbouton" type="submit" value="Envoyer"/>
                     </form>	
-                </div></div> 
-                <div id="lignebas"></div>
-                <div id="basdepage">
-                    <a href="mailto:bittorpiron@gmail.com">@Copyright 2015 Orhy | Une production Victor Piron</a>
-                </div> 
-                </div> 
+                </div>
+            </div> 
+            <div id="lignebas"></div>
+            <div id="basdepage">
+                <a href="mailto:bittorpiron@gmail.com">@Copyright 2015 Orhy | Une production Victor Piron</a>
+            </div> 
+        </div> 
     </body>
 </html>

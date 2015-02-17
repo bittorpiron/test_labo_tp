@@ -1,6 +1,6 @@
 body {
     background-color: #F0F0F0;
-/*    background-color:#000033;*/
+    /*    background-color:#000033;*/
     font-size:16px;
     font-family: Arial;
     color: #000000;
@@ -107,16 +107,16 @@ li {
 }
 
 li a {
-     color: #000000;     
+    color: #000000;     
 }
 
 ul,ol {
-     padding-left: 40px; 
-     padding-right: 40px;    
+    padding-left: 40px; 
+    padding-right: 40px;    
 }
 
 ul li {
-     list-style-image: url(ressources/pointrouge.jpg);    
+    list-style-image: url(ressources/pointrouge.jpg);    
 }
 
 #liste1, #liste2, #tableaux{
@@ -145,12 +145,10 @@ ul li {
 }
 
 #tableau{ 
-    float:top; 
     margin: auto;
     width: 90%;
 }
 #infos { 
-    float:top; 
     padding: 20px;   
 }
 #infos p{ 
@@ -158,7 +156,7 @@ ul li {
     font-weight:bold;    
 }
 table, td, th{ 
-       height: 40px;
+    height: 40px;
 }
 table{    
     border-collapse: collapse;
@@ -197,33 +195,27 @@ td{
     padding-bottom: 20px;
 }
 
-:required
-{
-    margin: auto;
-    border-color: #CC0000;
-}
-
 #formulaire, #formulaire_sortie
 {
-   margin:auto;
-   width: 50%;
+    margin:auto;
+    width: 50%;
 }
 #formulaire_contact
 {
-   margin:auto;
-   width: 90%;
+    margin:auto;
+    width: 80%;
 }
 
 fieldset{
-   border-color: #000033;
-   border-radius: 8px;
-   background-color: #F0F0F0;
-   
+    border-color: #000033;
+    border-radius: 8px;
+    background-color: #F0F0F0;
+
 }
 
 #fieldconnexion, #fielddeconnexion{
-   border-color: #CC0000;
-   background-color: white;
+    border-color: #CC0000;
+    background-color: white;
 }
 
 legend{
@@ -238,6 +230,24 @@ legend{
 
 textArea{
     height:150px;
-    max-width:800px;
-    min-width:500px;
+    width:510px;
+    resize: none;
+}
+
+input#submitbouton , input#resetbouton , input#connexionbouton{
+    cursor:pointer;
+    padding:5px 25px; 
+    background:#CC0000;; 
+    border:1px solid #33842a; 
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgba(0,0,0, .75);
+    color:#f3f3f3;
+    font-size:18px;
+}
+
+input#submitbouton:hover, input#submitbouton:focus,
+input#resetbouton:hover, input#resetbouton:focus,
+input#connexionbouton:hover, input#connexionbouton:focus{
+    background-color :#880000; 
+    box-shadow: 0 0 1px rgba(0,0,0, .75);
 }
