@@ -1,0 +1,340 @@
+body {
+    font-size:16px;
+    font-family: Arial;
+    background-image: url(ressources/635.jpg); 
+    color: #000000;
+}
+
+#page {
+    background-color: white;   
+    width: 800px;
+    margin:auto;
+}
+
+h1 {    
+    font-size:30px;
+    color:#000033;     
+}
+
+h2 {
+    font-size:25px;
+    color:#000033;
+    line-height: 25px;
+}
+
+a {    
+    text-decoration: none;
+    color: #CC0000
+}
+
+a:hover {
+    color: #CC0000
+}
+
+header {
+    height:110px
+}
+
+#entete_gauche { 
+    float:left;
+    margin-right: 20px;
+    padding-right: 20px;
+    width: 370px;
+    padding-left: 20px;
+}
+
+#entete_droite {
+    float:left;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 150px; 
+    margin-left:200px; 
+}
+
+#entete_droite img{
+    max-width: 60%;
+}
+
+#ligne{
+    height: 30px;
+    background-color: #fd6c00;
+}
+
+#lignebas{
+    height: 15px;
+    background-color: #fd6c00;
+}
+
+#centre {
+    background-color:#f2f0e6;
+    margin-top: 15px;
+}
+
+footer {
+    height: 120px;
+    background-color: #292929;     
+    text-align: center;
+}
+
+footer a{
+    line-height: 120px; 
+    color: #ffffff;
+}
+
+nav {
+    height:30px;
+    line-height: 30px;
+    background-color: #fd6c00;
+}
+
+nav a {
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color:#ffffff;
+}  
+
+nav a:hover {
+    background-color:#ffffff;
+    color:#cc0000;
+}
+
+nav a.active{
+    font-weight: 600;
+    background-color:#ffffff;
+    color:#fd6c00;
+}
+
+section  {
+    margin: 20px;
+    min-height: 375px;
+}
+
+article p {
+    padding: 0 10px 0 10px;
+    color: #232323;
+}
+
+button, input#submitbouton , input#resetbouton{
+    cursor:pointer;
+    padding:5px 25px; 
+    background:#fd6c00;
+    border:1px solid #33842a; 
+    border-radius: 1px;
+    box-shadow: 0 0 4px rgba(0,0,0, .75);
+    color:#f3f3f3;
+    font-size:18px;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button:hover, button:focus,
+input#submitbouton:hover, input#submitbouton:focus,
+input#resetbouton:hover, input#resetbouton:focus
+{
+    background-color :#cc0000; 
+    box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+
+aside h2, aside h3,
+article h2, form h2 {
+    height: 30px;
+    line-height: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0 0 0 10px;
+    color: #F9F7ED;
+}
+
+#contenue {
+    float: left;
+    width: 450px;
+    background: #ffffff;
+    border-left: 1px solid #cccccc;
+}
+
+#contenue h2 {
+    background-color: #0574ac;
+}
+
+aside {
+    float: right;
+    width: 280px;
+    background: #ffffff;   
+    border-left: 1px solid #cccccc;
+}
+
+aside h2 {
+    background: #699771;
+}
+
+aside h3 {
+    background: #9958a1;
+}
+
+aside p {
+    padding-left: 10px;
+}
+
+aside iframe{
+    margin:5px;
+    width:270px;
+    height:240px;
+    border:0;
+}
+
+li {
+    padding-left: 10px;
+    line-height: 20px;
+    font-size: 14px;
+    list-style-image: url(ressources/pointorange.png);
+    
+}
+
+aside li {
+    list-style-image: url(ressources/pointrouge.jpg); 
+}
+
+.espacement{
+    clear:both;
+}
+
+#columns article {
+    float: left;
+    width: 240px;
+    background: #ffffff;
+    margin-top: 20px;
+    border-left: 1px solid #cccccc;
+}
+
+#column2, #column3 {
+    margin-left: 18px;
+}
+
+#column1 h2{
+    background: #5b7c8e;
+}
+
+#column2 h2{
+    background: #b0ae3d;
+}
+
+#column3 h2{
+    background: #6ba8de;
+}
+
+#commande{
+    margin:auto;
+    width: 96%;
+}
+
+.choixmenujour {
+    float: left;
+    width: 152px;
+    background: #ffffff;
+    border-left: 1px solid #cccccc;
+}
+
+#donnees {
+    float: left;
+    width: 300px;
+    margin-top: 20px;
+    border-left: 1px solid #cccccc;
+    background: #ffffff;
+}
+
+#champs {
+    padding: 20px;
+}
+
+#lundi h2{
+    background: #00a5bb;
+}
+
+#mardi h2{
+    background: #b0ae3d;
+}
+
+#mercredi h2{
+    background: #9958a1;
+}
+
+#jeudi h2{
+    background: #6ba8de;
+}
+
+#vendredi h2{
+    background: #0574ac;
+}
+
+#donnees h2{
+    background: #d1a9d6;
+}
+
+input[type="text"]{
+    line-height: 24px;
+    color: #666666;
+    background-color: #e0e0e0;
+    border: 0px;    
+    padding-left: 5px; 
+}
+
+input[type="radio"]{
+    margin: 6px 3px 0 3px;
+    padding: 0px;
+    float: right;
+
+}
+
+.choixmenujour label {
+   line-height: 24px;
+   margin: 0 3px 0 3px;
+   padding: 0;
+}
+
+.info span {
+   display: none; 
+}
+
+.bulle{
+    margin: 4px 3px 0 3px;
+    padding: 0px;
+    width: 15px;
+    float: left;
+}
+.info:hover span {    
+   display: block; 
+   position: absolute;
+   width: 450px;
+   font-size: 14px;
+   line-height: 20px;
+   background: white;
+   color: green;
+   top: 180px; 
+   left: 560px;
+   padding: 3px;
+   border: 1px solid green;
+   border-left: 4px solid green;
+   margin:auto;
+   alignment-adjust: central;
+}
+
+.choixmenujour .info:hover span{
+   font-size: 12px;
+   line-height: 14px;
+   width: 350px;
+   top:280px; 
+   left: 655px;
+}
+
+.info:hover span img{ 
+    float: right;
+}
+
+#logo{ 
+   margin-left: 130px;
+   margin-top: 87px;
+   width: 200px;
+}
