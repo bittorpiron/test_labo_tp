@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--
+@Copyright Victor Piron Mardones.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>Gû Commandes</title>
+        <meta name="author" content="Victor Piron Mardones">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+    <body>
+        <div id="page">
+            <div id="ligne">
+            </div>
+            <header>
+                <div id="entete_gauche">
+                    <h2>Commande hebdomadaire</h2>
+                    <h1>Traiteur Scolaire GÛ</h1>
+                </div>
+                <div id="entete_droite">
+                    <img src="../ressources/toque.png" alt="Txapela Buruan...">
+                </div>        
+            </header>
+            <div id="centre">              
+                <nav>
+                    <a href="../index.html">Accueil</a>                
+                    <a class="active" href="commande.html">Commandes</a> 
+                    <a href="mailto:bittorpiron@gmail.com">Contact</a>
+                    <a href="#" class="info">Aide<span>
+                            • Veuillez s.v.p remplir toutes vos données personnelles.<br/>
+                            • Choisisez l'un des deux choix de repas diponibles pour chaque jour.<br/>
+                            • Pour de l'information sur le repas, placez le curseur sur le point<br/>                          
+                            &nbsp;&nbsp;orange du plat désiré.<br/>
+                            • Envoyez votre commande !<br/>
+                        </span>
+                    </a>
+                </nav>
+                <div id="commande">
+                    <form id="formulaire" action="cible.php" method="get">
+                        <div id="donnees">
+                            <h2>Données personnelles</h2>  
+                            <div id="champs">
+                                <label for="parent">Nom complet du parent</label><br/>
+                                <input type="text" name="parent" id="parent" size="30"><br/><br/>
+                                <label for="enfant">Nom complet de l'enfant</label><br/>
+                                <input type="text" name="enfant" id="enfant" size="30"><br/><br/>
+                                <label for="ecole">École de l'enfant</label><br/>
+                                <input type="text" name="ecole" id="ecole" size="30"><br/><br/>
+                                <label for="age">Âge de l'enfant</label><br/>
+                                <input type="text" name="age" id="age" size="1">
+                            </div>                            
+                        </div> 
+                        <img id="logo" src="../ressources/plats.png" alt="Logo">
+                        <div class="espacement"> </div>
+                        <br/>
+                        <div id="lundi" class="choixmenujour">
+                            <h2>lundi</h2>
+                            <div class = "info">
+                                <span>
+                                    <img src="../ressources/chili.jpg" alt="Chili con carne">
+                                    Chili con carne:<br>
+                                    Mijoté de boeuf et légumineuses.<br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Haricots rouges<br>
+                                    &nbsp;- Sauce tomate<br>
+                                    &nbsp;- Boeuf haché<br>
+                                    &nbsp;- Fromage Mozzarella<br>
+                                    &nbsp;- Maïs<br>
+                                    &nbsp;- Oignons<br>
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>    
+                            <input type="radio" name="lundi" id="lundi1" value="Chili con carne">
+                            <label for="lundi1" class="info">Chili con carne</label>
+                            <br>
+                            <div class = "info">
+                                <span>
+                                    <img src="../ressources/saumon.jpg" alt="Saumon grillé">
+                                    Saumon grillé:<br>
+                                    Pavé de saumon accompagné de légumes frais sur un lit de riz.<br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Pavé de saumon grillé<br>
+                                    &nbsp;- Carottes, haricots verts<br>
+                                    &nbsp;&nbsp;&nbsp;pommes de terre cuites,<br>
+                                    &nbsp;&nbsp;&nbsp;oignons confits<br>
+                                    &nbsp;- Riz basmati<br>
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>   
+                            <input type="radio" name="lundi" id="lundi2" value="Saumon grillé">
+                            <label for="lundi2" class="info">Saumon grillé</label> 
+                        </div>                        
+                        <div id="mardi" class="choixmenujour">
+                            <h2>mardi</h2>
+                            <div class = "info">                            
+                                <span>
+                                    <img src="../ressources/pâtéchinois.jpg" alt="Pâté chinois">
+                                    Pâté chinois:<br>
+                                    Steak, blé d'Inde, patates !!<br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Bœuf haché<br>
+                                    &nbsp;- Maïs<br>
+                                    &nbsp;- Pommes de terre en purée<br>
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>                        
+                            <label for="mardi1" class="info">Pâté chinois</label>
+                            <input type="radio" name="mardi" id="mardi1" value="Pâté chinois">  
+                            <br>    
+                            <div class = "info">                            
+                                <span>
+                                    <img src="../ressources/carbonara.jpg" alt="Spaghetti carbonara">
+                                    Spaghetti carbonara<br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Spaghetti (pâtes fraîches)<br>
+                                    &nbsp;- Bacon<br>
+                                    &nbsp;- Oignons verts<br>
+                                    &nbsp;- Oeufs, crème 35%<br>
+                                    &nbsp;- Parmesan frais râpé<br>
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>
+                            <input type="radio" name="mardi" id="mardi2" value="Spaghetti carbonara">
+                            <label for="mardi2" class="info">Spaghetti</label>
+                        </div>         
+                        <div id="mercredi" class="choixmenujour">
+                            <h2>mercredi</h2>                     
+                            <div class = "info">                            
+                                <span>
+                                    <img src="../ressources/lasagna.jpg" alt="Lasagne">
+                                    Lasagne végétarienne:<br>
+                                    Garniture aux légumes et sauce tomate maison. 
+                                    <br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Pâte à lasagne fraîche<br>
+                                    &nbsp;- Aubergines, courgettes,<br>
+                                    &nbsp;&nbsp;&nbsp;poivrons rouges et jaunes<br>
+                                    &nbsp;- Sauce tomate maison<br>
+                                    &nbsp;- Parmesan et Mozzarella râpés<br>                                    
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>
+                            <label for="mercredi1" class="info">Lasagne</label>
+                            <input type="radio" name="mercredi" id="mercredi1" value="Lasagne">
+                            <br>
+                            <div class = "info">                            
+                                <span>
+                                    <img src="../ressources/pouletpainé.jpg" alt="Doigts de poulet">
+                                    Doigts de poulet panés:<br>
+                                    Croquettes à la fois tendres et croquantes.<br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Poitrines de poulet<br>
+                                    &nbsp;- Chapelure<br>
+                                    &nbsp;- Oeufs<br>
+                                    &nbsp;- Fines herbes à l'italienne<br>
+                                    &nbsp;- Parmesan<br> 
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>
+                            <label for="mercredi2" class="info">Poulet pané</label>
+                            <input type="radio" name="mercredi" id="mercredi2" value="Doigts de poulet">
+                        </div>
+                        <div id="jeudi" class="choixmenujour">
+                            <h2>jeudi</h2>
+                            <div class = "info">
+                                <span>
+                                    <img src="../ressources/pâtes.jpg" alt="Penne alla Gigi">
+                                    Penne alla Gigi:
+                                    Champignons, pancetta et prosciutto dans une sauce rosée.<br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Penne<br>
+                                    &nbsp;- Coulis de tomate<br>
+                                    &nbsp;- Crème 35%<br>
+                                    &nbsp;- Oignons, champignons<br>
+                                    &nbsp;- Pancetta et prosciutto<br> 
+                                    &nbsp;- Parmesan<br> 
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>
+                            <label for="jeudi1">Penne Gigi</label>
+                            <input type="radio" name="jeudi" id="jeudi1" value="Penne alla Gigi">
+                            <br>
+                            <div class = "info">
+                                <span>
+                                    <img src="../ressources/poulet.jpg" alt="Poulet Rôti à la Potuguese">
+                                    Poulet rôti à la Portugaise:<br>
+                                    Avec accompagnement de salade de chou<br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Cuisses de poulet<br>
+                                    &nbsp;- Pommes de terre<br>
+                                    &nbsp;- Oignons<br>
+                                    &nbsp;- Salade de chou<br>
+                                    &nbsp;- Olives<br> 
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>
+                            <input type="radio" name="jeudi" id="jeudi2" value="Poulet rôti à la Portugaise">
+                            <label for="jeudi2" class="info">Poulet rôti</label>
+                        </div>   
+                        <div id="vendredi" class="choixmenujour">
+                            <h2>vendredi</h2>
+                            <div class = "info">
+                                <span>
+                                    <img src="../ressources/pizza.jpg" alt="Pizza Végérarienne">
+                                    Pizza vegétarienne<br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Pâte à pizza (sans gluten)<br>
+                                    &nbsp;- Fromage Mozzarela (sans lactose)<br>
+                                    &nbsp;- Pâte de tomate<br>
+                                    &nbsp;- Poivrons<br>
+                                    &nbsp;- Oignons<br>
+                                    &nbsp;- Olives<br> 
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>
+                            <input type="radio" name="vendredi" id="vendredi1" value="Pizza végétarienne">
+                            <label for="vendredi1" class="info">Pizza</label>
+                            <br>
+                            <div class = "info">
+                                <span>
+                                    <img src="../ressources/boeuf.jpg" alt="Boeuf Braisé">
+                                    Boeuf braisé:<br>
+                                    Accompagnement de pommes de terre pilées et brocoli<br><br>
+                                    Ingrédients:<br>
+                                    &nbsp;- Cubes de boeuf<br>
+                                    &nbsp;- Pommes de terre<br>
+                                    &nbsp;- Carottes<br>
+                                    &nbsp;- Oignons<br>
+                                    &nbsp;- Brocoli<br> 
+                                </span>
+                                <img class="bulle" src="../ressources/info.jpg" alt="Info">
+                            </div>              
+                            <input type="radio" name="vendredi" id="vendredi2" value="Boeuf braisé">
+                            <label for="vendredi2" class="info">Boeuf braisé</label>
+                        </div>
+                        <div class="espacement"> </div>
+                        <input id="resetbouton" type="reset" value="Vider"/>
+                        <input id="submitbouton" type="submit" value="Envoyer"/>
+                    </form>	
+                </div>
+            </div> 
+            <div id="lignebas"></div>
+            <footer>
+                <a href="mailto:bittorpiron@gmail.com">@Copyright 2015 Orhy | Une production Victor Piron</a>
+            </footer> 
+        </div> 
+    </body>
+</html>

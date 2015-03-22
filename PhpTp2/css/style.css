@@ -1,7 +1,7 @@
 body {
     font-size:16px;
     font-family: Arial;
-    background-image: url(ressources/635.jpg); 
+    background-image: url(../ressources/635.jpg); 
     color: #000000;
 }
 
@@ -102,12 +102,11 @@ nav a:hover {
 nav a.active{
     font-weight: 600;
     background-color:#ffffff;
-    color:#fd6c00;
+    color:#f58220;
 }
 
-section  {
+#corps  {
     margin: 20px;
-    min-height: 375px;
 }
 
 article p {
@@ -138,7 +137,7 @@ input#resetbouton:hover, input#resetbouton:focus
 }
 
 aside h2, aside h3,
-article h2, form h2 {
+article h2, form h2{
     height: 30px;
     line-height: 30px;
     font-weight: 500;
@@ -189,14 +188,39 @@ li {
     padding-left: 10px;
     line-height: 20px;
     font-size: 14px;
-    list-style-image: url(ressources/pointorange.png);
-    
+    list-style-image: url(../ressources/pointorange.png);
+
 }
 
 aside li {
-    list-style-image: url(ressources/pointrouge.jpg); 
+    list-style-image: url(../ressources/pointrouge.jpg); 
 }
 
+#reponse h2, #reponse h3{
+    height: 30px;
+    line-height: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0 0 0 10px;
+    color: #F9F7ED;
+}
+
+#reponse {
+    width: 500px;
+    margin:auto;
+    background: #ffffff;
+    border-left: 1px solid #cccccc;
+}
+
+#reponse h2{
+    background: green;
+}
+
+#reponse h3{
+    color: black;
+    background: red;
+}
 .espacement{
     clear:both;
 }
@@ -289,13 +313,13 @@ input[type="radio"]{
 }
 
 .choixmenujour label {
-   line-height: 24px;
-   margin: 0 3px 0 3px;
-   padding: 0;
+    line-height: 24px;
+    margin: 0 3px 0 3px;
+    padding: 0;
 }
 
 .info span {
-   display: none; 
+    display: none; 
 }
 
 .bulle{
@@ -305,28 +329,29 @@ input[type="radio"]{
     float: left;
 }
 .info:hover span {    
-   display: block; 
-   position: absolute;
-   width: 450px;
-   font-size: 14px;
-   line-height: 20px;
-   background: white;
-   color: green;
-   top: 180px; 
-   left: 560px;
-   padding: 3px;
-   border: 1px solid green;
-   border-left: 4px solid green;
-   margin:auto;
-   alignment-adjust: central;
+    display: block; 
+    position: absolute;
+    width: 450px;
+    font-size: 14px;
+    line-height: 20px;
+    background: white;
+    color: green;
+    top: 180px; 
+    left: 560px;
+
+    padding: 3px;
+    border: 1px solid green;
+    border-left: 4px solid green;
+    margin:auto;
+    alignment-adjust: central;
 }
 
 .choixmenujour .info:hover span{
-   font-size: 12px;
-   line-height: 14px;
-   width: 350px;
-   top:280px; 
-   left: 655px;
+    font-size: 12px;
+    line-height: 14px;
+    width: 400px;
+    top:280px; 
+    left: 630px;
 }
 
 .info:hover span img{ 
@@ -334,7 +359,12 @@ input[type="radio"]{
 }
 
 #logo{ 
-   margin-left: 130px;
-   margin-top: 87px;
-   width: 200px;
+    margin-left: 130px;
+    margin-top: 87px;
+    width: 200px;
+}
+
+table{
+    margin: auto;
+    padding: 10px;
 }
