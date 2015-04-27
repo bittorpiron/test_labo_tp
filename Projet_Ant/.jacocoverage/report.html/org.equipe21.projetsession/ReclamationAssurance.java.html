@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ReclamationAssurance.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Refund&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">org.equipe21.projetsession</a> &gt; <span class="el_source">ReclamationAssurance.java</span></div><h1>ReclamationAssurance.java</h1><pre class="source lang-java linenums">package org.equipe21.projetsession;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
+import net.sf.json.JSONObject;
+
+public final class ReclamationAssurance {
+    
+    static final String OPTION_LIRE_STATISTIQUES = &quot;-S&quot;;
+    static final String OPTION_INITIALISER_STATISTIQUES = &quot;-SR&quot;;
+    static final String NOM_FICHIER_STATISTIQUES = &quot;stats.json&quot;;
+    static final String ENCODAGE_FICHIERS =  &quot;UTF-8&quot;;
+    static final char CONFIRMATION = 'O';
+
+    @SuppressWarnings(&quot;ResultOfObjectAllocationIgnored&quot;)
+    public static void main(String[] args) throws IOException {
+<span class="fc" id="L18">        new ReclamationAssurance(args);</span>
+<span class="fc" id="L19">    }</span>
+
+    
+<span class="fc" id="L22">    ReclamationAssurance(String[] args) throws IOException {</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (args.length == 1) {</span>
+<span class="fc" id="L24">            traiterOptions(args);</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        } else if (args.length == 2) {</span>
+<span class="fc" id="L26">            validerFichiersParametresEntree(args);</span>
+        } else {
+<span class="fc" id="L28">            System.out.println(Messages.NOMBRE_ARGUMENTS_INVALIDE);</span>
+        }
+<span class="fc" id="L30">    }</span>
+
+    
+    private void traiterOptions(String[] args) throws IOException {
+        
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        if (args[0].compareTo(OPTION_LIRE_STATISTIQUES) == 0) {</span>
+<span class="nc" id="L36">            System.out.println(recupererStatistiques());</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        } else if(args[0].compareTo(OPTION_INITIALISER_STATISTIQUES) == 0) {</span>
+<span class="nc" id="L38">            traiterOptionResetStatistiques();</span>
+        }else{
+<span class="fc" id="L40">            System.out.println(Messages.ARGUMENT_INVALIDE);</span>
+        }
+<span class="fc" id="L42">    }</span>
+
+    
+    private void traiterOptionResetStatistiques() throws IOException {
+<span class="nc bnc" id="L46" title="All 2 branches missed.">        if (demanderConfirmation(System.in)) {</span>
+<span class="nc" id="L47">            EcritureFichierJsonStatistiques ecrFichierJsonStats = new EcritureFichierJsonStatistiques(new Statistiques());</span>
+<span class="nc" id="L48">            ecrFichierJsonStats.ecrireFichier(NOM_FICHIER_STATISTIQUES);</span>
+<span class="nc" id="L49">            System.out.println(Messages.MISE_A_ZERO_REUSSIE);</span>
+        }
+<span class="nc" id="L51">    }</span>
+
+    
+    private Statistiques recupererStatistiques() {
+<span class="fc" id="L55">        LectureFichierJson lectFichierJson = new LectureFichierJson();</span>
+<span class="fc" id="L56">        lectFichierJson.lireFichier(NOM_FICHIER_STATISTIQUES, ENCODAGE_FICHIERS);</span>
+        try {
+<span class="fc" id="L58">            ConvertisseurJsonEnStatistiques conv = new ConvertisseurJsonEnStatistiques((JSONObject) lectFichierJson.getObjetSortie());</span>
+<span class="fc" id="L59">            return conv.construireStatistique();</span>
+<span class="nc" id="L60">        } catch (FichierStatistiqueEndommageException | ChampDonneesManquantFichierEntreeException | ErreurValeurFichierEntreeException ex) {</span>
+<span class="nc" id="L61">            return new Statistiques();</span>
+        }
+    }
+    
+    
+    private void validerFichiersParametresEntree(String[] args) {
+<span class="fc" id="L67">        LectureFichier  lecteurDeFichierEntree = new LectureFichierJson();</span>
+        
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">        if (lecteurDeFichierEntree.lireFichier(args[0], ENCODAGE_FICHIERS)) {            </span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">            if (!traiterFichiersParametresEntree(lecteurDeFichierEntree, args[1])){</span>
+<span class="nc" id="L71">                System.out.println(Messages.ECHEC_ECRITURE_FICHIER); </span>
+            }
+        } else {
+<span class="fc" id="L74">            System.out.println(Messages.ECHEC_OUVERTURE_FICHIER);</span>
+        }            
+<span class="fc" id="L76">    }</span>
+     
+    
+    boolean traiterFichiersParametresEntree(LectureFichier lecteurDeFichierEntree, String nomFichierSortie) {      
+
+        try {
+<span class="nc" id="L82">            JSONObject donneesJson = (JSONObject) lecteurDeFichierEntree.getObjetSortie();</span>
+<span class="nc" id="L83">            ConvertisseurJsonEnDemandeReclamation conv = new ConvertisseurJsonEnDemandeReclamation(donneesJson);</span>
+<span class="nc" id="L84">            DemandeReclamation demandeEnCours = conv.construireDemandeReclamation();</span>
+<span class="nc" id="L85">            ReponseRemboursement reponseCourant = demandeEnCours.traiterDemande();</span>
+<span class="nc" id="L86">            return produireFichierSortie(nomFichierSortie, reponseCourant);</span>
+<span class="nc" id="L87">        } catch (ChampDonneesManquantFichierEntreeException | ErreurValeurFichierEntreeException ex) {</span>
+<span class="nc" id="L88">            return produireFichierSortieErreur(nomFichierSortie, ex.getMessage());</span>
+        }
+        
+    }
+        
+    
+    boolean produireFichierSortie(String nomFichierSortie, ReponseRemboursement reponseCourant) {                    
+        try {
+<span class="nc bnc" id="L96" title="All 2 branches missed.">            if ((new EcritureFichierJson(reponseCourant)).ecrireFichier(nomFichierSortie)){</span>
+<span class="nc" id="L97">                return miseAJourStatistiques(reponseCourant);</span>
+            }else{
+<span class="nc" id="L99">                return miseAJourStatistiquesErreur();</span>
+            }    
+<span class="nc" id="L101">        } catch (IOException ex) {</span>
+<span class="nc" id="L102">            return miseAJourStatistiquesErreur();</span>
+        }
+    }
+    
+
+    private boolean miseAJourStatistiques(ReponseRemboursement reponseCourant) {
+<span class="nc" id="L108">        Statistiques stats = recupererStatistiques();</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">        for (Soin soinDeclare : reponseCourant.getListeDesSoins().getListeDeSoins()){</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">            if ( soinDeclare.getNbrTraitements()&gt; 0 ){</span>
+<span class="nc" id="L111">                stats.incrementerNbCategorieSoinDeclare(soinDeclare.getCategorie(), soinDeclare.getNbrTraitements());</span>
+            }
+<span class="nc" id="L113">        }</span>
+<span class="nc" id="L114">        stats.incrementerNbReclamationsValidesTraitees();</span>
+<span class="nc" id="L115">        ecrireFichierStatistiques(stats);        </span>
+<span class="nc" id="L116">        return true;</span>
+    }
+    
+
+    private void ecrireFichierStatistiques(Statistiques stats) {
+        try {
+<span class="fc" id="L122">            new EcritureFichierJsonStatistiques(stats).ecrireFichier(NOM_FICHIER_STATISTIQUES);</span>
+<span class="nc" id="L123">        } catch (IOException ex) {</span>
+<span class="nc" id="L124">            System.out.println(Messages.ERREUR_ECRITURE_STATISTIQUES); </span>
+<span class="fc" id="L125">        }</span>
+<span class="fc" id="L126">    }</span>
+    
+    
+    private boolean miseAJourStatistiquesErreur() {
+<span class="fc" id="L130">         Statistiques stats = recupererStatistiques();</span>
+<span class="fc" id="L131">         stats.incrementerNbReclamationsRejetees();</span>
+<span class="fc" id="L132">         ecrireFichierStatistiques(stats);  </span>
+<span class="fc" id="L133">         return false;</span>
+    }
+    
+    
+    protected boolean produireFichierSortieErreur(String nomFichierSortie, String messageErreur) {
+      
+        try {
+<span class="nc" id="L140">            miseAJourStatistiquesErreur();</span>
+<span class="nc" id="L141">            return (new EcritureFichierJson(messageErreur)).ecrireFichier(nomFichierSortie);</span>
+            
+<span class="fc" id="L143">        } catch (IOException ex) {</span>
+<span class="fc" id="L144">            return false;</span>
+        }
+        
+    }
+    
+
+    protected static boolean demanderConfirmation(InputStream source) throws IOException {
+<span class="fc" id="L151">        Scanner sc = new Scanner(source);</span>
+<span class="fc" id="L152">        System.out.print(Messages.CONFIRMATION_REINITIALISATION);</span>
+<span class="fc" id="L153">        String reponse = sc.nextLine();</span>
+<span class="fc bfc" id="L154" title="All 2 branches covered.">        return reponse.toUpperCase().charAt(0) == CONFIRMATION;        </span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

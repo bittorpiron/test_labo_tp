@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Statistiques.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Refund&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">org.equipe21.projetsession</a> &gt; <span class="el_source">Statistiques.java</span></div><h1>Statistiques.java</h1><pre class="source lang-java linenums">
+package org.equipe21.projetsession;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Statistiques {
+    
+<span class="fc" id="L10">    private int nbReclamationsValidesTraitees = 0;</span>
+<span class="fc" id="L11">    private int nbReclamationsRejetees = 0;</span>
+    
+    // Map de format &lt;Nom_type_de_soin, Nombre_soins_déclarés&gt;
+<span class="fc" id="L14">    private Map&lt;String, Integer&gt; nbSoinsDeclares = new HashMap&lt;&gt;();</span>
+    
+    
+<span class="fc" id="L17">    Statistiques() {</span>
+<span class="fc" id="L18">    }</span>
+    
+    
+    // Map de format &lt;Nom_type_de_soin, Nombre_soins_déclarés&gt;
+<span class="fc" id="L22">    Statistiques(int nbReclamationsValidesTraitees, int nbReclamationsRejetees, Map&lt;String, Integer&gt; nbSoinsDeclares) {</span>
+<span class="fc" id="L23">        this.nbReclamationsValidesTraitees = nbReclamationsValidesTraitees;</span>
+<span class="fc" id="L24">        this.nbReclamationsRejetees = nbReclamationsRejetees;</span>
+<span class="fc" id="L25">        this.nbSoinsDeclares = nbSoinsDeclares;</span>
+<span class="fc" id="L26">    }</span>
+    
+    
+    public int getNbReclamationsValidesTraitees() {
+<span class="fc" id="L30">        return nbReclamationsValidesTraitees;</span>
+    }
+    
+    
+    public void incrementerNbReclamationsValidesTraitees() {
+<span class="fc" id="L35">        nbReclamationsValidesTraitees++;</span>
+<span class="fc" id="L36">    }</span>
+    
+    
+    public int getNbReclamationsRejetees() {
+<span class="fc" id="L40">        return nbReclamationsRejetees;</span>
+    }
+    
+    
+    public void incrementerNbReclamationsRejetees() {
+<span class="fc" id="L45">        nbReclamationsRejetees++;</span>
+<span class="fc" id="L46">    }</span>
+    
+    
+    public int getNbCategorieSoinDeclare(String categorieSoin) {
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">        if (nbSoinsDeclares.containsKey(categorieSoin)) {</span>
+<span class="fc" id="L51">            return nbSoinsDeclares.get(categorieSoin);</span>
+        }
+        else {
+<span class="nc" id="L54">            return 0;</span>
+        }
+    }
+    
+    
+    public void incrementerNbCategorieSoinDeclare(String categorieSoin) {
+<span class="fc" id="L60">        incrementerNbCategorieSoinDeclare(categorieSoin, 1);</span>
+<span class="fc" id="L61">    }</span>
+    
+    
+    public void incrementerNbCategorieSoinDeclare(String categorieSoin, int nbrIncrements) {
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (nbSoinsDeclares.containsKey(categorieSoin)) {</span>
+<span class="fc" id="L66">            nbSoinsDeclares.put(categorieSoin, nbSoinsDeclares.get(categorieSoin) + nbrIncrements);</span>
+        }
+        else {
+<span class="fc" id="L69">            nbSoinsDeclares.put(categorieSoin, nbrIncrements);</span>
+        }
+<span class="fc" id="L71">    }</span>
+    
+    
+    // Map de format &lt;Nom_type_de_soin, Nombre_soins_déclarés&gt;
+    public Map&lt;String, Integer&gt; getListeNbSoinsDeclares(){ 
+<span class="fc" id="L76">        return nbSoinsDeclares;</span>
+    }
+    
+    
+    @Override
+    public String toString() {
+<span class="nc" id="L82">        String contenuAffichageStatistiques =</span>
+<span class="nc" id="L83">                &quot;Nombre de réclamations valides traitées = &quot; + String.valueOf(nbReclamationsValidesTraitees) +</span>
+<span class="nc" id="L84">                &quot;\nNombre de réclamations rejetées = &quot; + String.valueOf(nbReclamationsRejetees);</span>
+        
+        // Map de format &lt;Nom_type_de_soin, Nombre_soins_déclarés&gt;
+<span class="nc bnc" id="L87" title="All 2 branches missed.">        for (Entry&lt;String, Integer&gt; prochainSoin : nbSoinsDeclares.entrySet()) {</span>
+<span class="nc" id="L88">            contenuAffichageStatistiques +=</span>
+<span class="nc" id="L89">                    &quot;\nNombre de soins déclarés pour \&quot;&quot; + prochainSoin.getKey() + &quot;\&quot; = &quot; +</span>
+<span class="nc" id="L90">                    String.valueOf(prochainSoin.getValue());</span>
+<span class="nc" id="L91">        }</span>
+        
+<span class="nc" id="L93">        return contenuAffichageStatistiques;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

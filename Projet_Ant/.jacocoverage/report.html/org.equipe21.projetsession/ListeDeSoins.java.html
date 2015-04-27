@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ListeDeSoins.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Refund&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">org.equipe21.projetsession</a> &gt; <span class="el_source">ListeDeSoins.java</span></div><h1>ListeDeSoins.java</h1><pre class="source lang-java linenums">package org.equipe21.projetsession;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/*
+ * Liste des soins admissibles définis dans le contrat en cours d'utilisation
+ */
+public class ListeDeSoins {
+
+<span class="fc" id="L11">    private List&lt;Soin&gt; listeDeSoins = new ArrayList&lt;&gt;();</span>
+
+<span class="fc" id="L13">    public ListeDeSoins() {</span>
+
+<span class="fc" id="L15">        this.listeDeSoins.add(new Soin(0, &quot;Massothérapie&quot;, &quot;0.00$&quot;));</span>
+<span class="fc" id="L16">        this.listeDeSoins.add(new Soin(100, &quot;Ostéopathie&quot;, &quot;250.00$&quot;));</span>
+<span class="fc" id="L17">        this.listeDeSoins.add(new Soin(150, &quot;Kinésithérapie&quot;, &quot;0.00$&quot;));</span>
+<span class="fc" id="L18">        this.listeDeSoins.add(new Soin(175, &quot;Médecin généraliste privé&quot;, &quot;200.00$&quot;));</span>
+<span class="fc" id="L19">        this.listeDeSoins.add(new Soin(200, &quot;Psychologie individuelle&quot;, &quot;250.00$&quot;));</span>
+<span class="fc" id="L20">        this.listeDeSoins.add(new Soin(300, &quot;Soins dentaires&quot;, &quot;0.00$&quot;, true));</span>
+<span class="fc" id="L21">        this.listeDeSoins.add(new Soin(400, &quot;Naturopathie, acuponcture&quot;, &quot;0.00$&quot;));</span>
+<span class="fc" id="L22">        this.listeDeSoins.add(new Soin(500, &quot;Chiropratie&quot;, &quot;150.00$&quot;));</span>
+<span class="fc" id="L23">        this.listeDeSoins.add(new Soin(600, &quot;Physiothérapie&quot;, &quot;300.00$&quot;));</span>
+<span class="fc" id="L24">        this.listeDeSoins.add(new Soin(700, &quot;Orthophonie, ergothérapie&quot;, &quot;0.00$&quot;));</span>
+
+<span class="fc" id="L26">    }</span>
+
+
+    public List&lt;Soin&gt; getListeDeSoins() {
+<span class="fc" id="L30">        return listeDeSoins;</span>
+    }
+
+
+    public void setListeDeSoins(List&lt;Soin&gt; listeDeSoins) {
+<span class="nc" id="L35">        this.listeDeSoins = listeDeSoins;</span>
+<span class="nc" id="L36">    }</span>
+
+
+    public Soin getSoinSelonCategorie(String categorie) {
+<span class="fc" id="L40">        int indexListeSoins = 0;</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        for (Soin soinAdmisible : listeDeSoins) {</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">            if (soinAdmisible.getCategorie().contentEquals(categorie)) {</span>
+<span class="fc" id="L43">                return listeDeSoins.get(indexListeSoins);</span>
+            }
+<span class="fc" id="L45">            indexListeSoins++;</span>
+<span class="fc" id="L46">        }</span>
+<span class="nc" id="L47">        return null;</span>
+    }
+
+
+    public Soin getSoinParNumero(Integer numeroSoin) {
+<span class="fc" id="L52">        int indexListeSoins = 0;</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        for (Soin soinAdmisible : listeDeSoins) {</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">            if (soinAdmisible.getNumeros().contains(numeroSoin)) {</span>
+<span class="fc" id="L55">                return listeDeSoins.get(indexListeSoins);</span>
+            }
+<span class="fc" id="L57">            indexListeSoins++;</span>
+<span class="fc" id="L58">        }</span>
+<span class="nc" id="L59">        return null;</span>
+    }
+
+
+    public boolean isSoinAdmisible(Integer numeroSoin) {
+
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        for (Soin soinAdmisible : listeDeSoins) {</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">            if (soinAdmisible.getNumeros().contains(numeroSoin)) {</span>
+<span class="fc" id="L67">                return true;</span>
+            }
+<span class="fc" id="L69">        }</span>
+<span class="fc" id="L70">        return false;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

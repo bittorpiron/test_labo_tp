@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConvertisseurJsonEnStatistiques.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Refund&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">org.equipe21.projetsession</a> &gt; <span class="el_source">ConvertisseurJsonEnStatistiques.java</span></div><h1>ConvertisseurJsonEnStatistiques.java</h1><pre class="source lang-java linenums">
+package org.equipe21.projetsession;
+
+import java.util.HashMap;
+import java.util.Map;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+public class ConvertisseurJsonEnStatistiques {
+    
+    static Validateur validateurDonnees;
+<span class="fc" id="L12">    private JSONObject donneesJsonSource = null;</span>
+    
+    
+<span class="fc" id="L15">    ConvertisseurJsonEnStatistiques(JSONObject donneesJsonSource) {</span>
+<span class="fc" id="L16">        validateurDonnees = new Validateur();</span>
+<span class="fc" id="L17">        this.donneesJsonSource = donneesJsonSource;</span>
+<span class="fc" id="L18">    }</span>
+    
+    
+    public Statistiques construireStatistique()
+            throws ErreurValeurFichierEntreeException,
+                   ChampDonneesManquantFichierEntreeException,
+                   FichierStatistiqueEndommageException {
+
+<span class="fc" id="L26">        validerChampsExistants(donneesJsonSource);</span>
+<span class="fc" id="L27">        validerDonneesPartieGenerale(donneesJsonSource);</span>
+        
+<span class="fc" id="L29">        return new Statistiques(donneesJsonSource.getInt(&quot;nb_reclamations_valide_traitees&quot;),</span>
+<span class="fc" id="L30">                                donneesJsonSource.getInt(&quot;nb_reclamations_rejetees&quot;),</span>
+<span class="fc" id="L31">                                trouverListeNbSoinsDeclares(donneesJsonSource.getJSONObject(&quot;nb_soins_declares&quot;)));</span>
+    }
+
+    
+    private void validerDonneesPartieGenerale(JSONObject donneesJsonSource)
+                    throws FichierStatistiqueEndommageException {
+
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        if (!validateurDonnees.validerStringEnIntegerPositif(donneesJsonSource.getString(&quot;nb_reclamations_valide_traitees&quot;))) {</span>
+<span class="fc" id="L39">            throw new FichierStatistiqueEndommageException(donneesJsonSource.getString(&quot;nb_reclamations_valide_traitees&quot;));</span>
+        }
+        
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (!validateurDonnees.validerStringEnIntegerPositif(donneesJsonSource.getString(&quot;nb_reclamations_rejetees&quot;))) {</span>
+<span class="fc" id="L43">            throw new FichierStatistiqueEndommageException(donneesJsonSource.getString(&quot;nb_reclamations_rejetees&quot;));</span>
+        }
+<span class="fc" id="L45">    }</span>
+    
+    
+    private void validerChampsExistants(JSONObject donneesJsonSource)
+            throws ChampDonneesManquantFichierEntreeException {
+
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (!donneesJsonSource.containsKey(&quot;nb_reclamations_valide_traitees&quot;)) {</span>
+<span class="fc" id="L52">            throw new ChampDonneesManquantFichierEntreeException(&quot;nb_reclamations_valide_traitees&quot;);</span>
+        }
+
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (!donneesJsonSource.containsKey(&quot;nb_reclamations_rejetees&quot;)) {</span>
+<span class="fc" id="L56">            throw new ChampDonneesManquantFichierEntreeException(&quot;nb_reclamations_rejetees&quot;);</span>
+        }
+
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (!donneesJsonSource.containsKey(&quot;nb_soins_declares&quot;)) {</span>
+<span class="fc" id="L60">            throw new ChampDonneesManquantFichierEntreeException(&quot;nb_soins_declares&quot;);</span>
+        }
+<span class="fc" id="L62">    }</span>
+
+    
+    // La structure de données générée en sortie est de format Map&lt;Nom_du_type_de_soin, Nombre_soins_déclarés&gt;
+    Map&lt;String, Integer&gt; trouverListeNbSoinsDeclares(JSONObject jsonDonneesNbSoinsDeclares)
+            throws ErreurValeurFichierEntreeException,
+                   ChampDonneesManquantFichierEntreeException {
+        
+<span class="fc" id="L70">        Map&lt;String, Integer&gt; listeNbSoinsDeclares = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L71">        JSONArray cles = jsonDonneesNbSoinsDeclares.names();</span>
+        
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        for (int i = 0; i &lt; cles.size(); i++) {</span>
+<span class="fc" id="L74">            String prochaineCleJson = cles.getString(i);</span>
+<span class="fc" id="L75">            listeNbSoinsDeclares.put(prochaineCleJson,</span>
+<span class="fc" id="L76">                                     Integer.parseInt(jsonDonneesNbSoinsDeclares.getString(prochaineCleJson)));</span>
+        }
+
+<span class="fc" id="L79">        return listeNbSoinsDeclares;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

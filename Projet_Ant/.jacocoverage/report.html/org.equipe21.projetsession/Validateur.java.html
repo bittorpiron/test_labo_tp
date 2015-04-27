@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Validateur.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Refund&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">org.equipe21.projetsession</a> &gt; <span class="el_source">Validateur.java</span></div><h1>Validateur.java</h1><pre class="source lang-java linenums">
+package org.equipe21.projetsession;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+
+public class Validateur {
+    
+    ListeDeSoins listeSoinsAdmisibles;
+    
+<span class="fc" id="L12">    public Validateur() {</span>
+        
+<span class="fc" id="L14">        listeSoinsAdmisibles = new ListeDeSoins();</span>
+        
+<span class="fc" id="L16">    }</span>
+
+
+    public boolean validerLettreContrat(char lettreContrat) {
+<span class="fc bfc" id="L20" title="All 4 branches covered.">        return lettreContrat &gt; '@' &amp;&amp; lettreContrat &lt; 'F';</span>
+    }
+
+        
+    public boolean validerClient(String codeClient) {
+<span class="fc" id="L25">        int nombreChiffre = codeClient.length();</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (nombreChiffre == 6) {</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            for (int i = 0; i &lt; nombreChiffre; i++) {</span>
+<span class="pc bpc" id="L28" title="1 of 4 branches missed.">                if (codeClient.charAt(i) &lt; '0' || codeClient.charAt(i) &gt; '9') {</span>
+<span class="fc" id="L29">                    return false;</span>
+                }
+            }
+        } else {
+<span class="fc" id="L33">            return false;</span>
+        }
+<span class="fc" id="L35">        return true;</span>
+    }
+
+    
+    public boolean validerMois(String mois) {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (mois.length() == 7) {</span>
+<span class="fc" id="L41">            return validerDate(mois, &quot;yyyy-MM&quot;);</span>
+        }
+<span class="fc" id="L43">        return false;</span>
+    }
+
+    
+    public boolean validerDate(String date) {
+<span class="fc bfc" id="L48" title="All 4 branches covered.">        if (date != null &amp;&amp; date.length() == 10) {</span>
+<span class="fc" id="L49">            return validerDate(date, &quot;yyyy-MM-dd&quot;);</span>
+        }
+<span class="fc" id="L51">        return false;</span>
+    }
+
+    
+    public boolean validerDate(String dateAValider, String formatDeDate) {
+
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (dateAValider == null) {</span>
+<span class="fc" id="L58">            return false;</span>
+        }
+
+<span class="fc" id="L61">        SimpleDateFormat formatDate = new SimpleDateFormat(formatDeDate);</span>
+<span class="fc" id="L62">        formatDate.setLenient(false);</span>
+
+<span class="fc" id="L64">        return estUneDateValide(formatDate, dateAValider);</span>
+
+    }
+
+    
+    private boolean estUneDateValide(SimpleDateFormat formatDate, String dateAValider) {
+
+        try {
+<span class="fc" id="L72">            formatDate.parse(dateAValider);</span>
+<span class="fc" id="L73">            return true;</span>
+<span class="fc" id="L74">        } catch (ParseException e) {</span>
+<span class="fc" id="L75">            return false;</span>
+        }
+
+    }
+
+    public boolean validerDateAppartientMois(String mois, String date) {
+<span class="fc" id="L81">        return date.contains(mois);</span>
+    }
+ 
+    
+    public boolean validerNumeroSoin(int numeroSoin) {
+        
+        
+<span class="fc" id="L88">        return listeSoinsAdmisibles.isSoinAdmisible(numeroSoin);</span>
+        
+    }
+
+    
+    public boolean validerMontantString(String montant) {
+<span class="fc" id="L94">        int nombreDeCaracteres = montant.length();</span>
+        //0.00$ mimimun
+<span class="fc bfc" id="L96" title="All 2 branches covered.">        if (nombreDeCaracteres &gt; 4) {            </span>
+<span class="fc" id="L97">            return validerCaracteresMontantString(nombreDeCaracteres, montant);</span>
+        }else{
+<span class="fc" id="L99">            return false;</span>
+        }
+    }
+
+    
+    private boolean validerCaracteresMontantString(int nombreDeCaracteres, String montant) {
+<span class="fc bfc" id="L105" title="All 2 branches covered.">        for (int i = 0; i &lt; nombreDeCaracteres; i++) {</span>
+            
+<span class="pc bpc" id="L107" title="1 of 2 branches missed.">            if (pasDeSigneDollar(i, nombreDeCaracteres, montant) ||</span>
+<span class="fc bfc" id="L108" title="All 2 branches covered.">                pasDeSeparateurValide(i, nombreDeCaracteres, montant) || </span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">                pasChiffres(i, nombreDeCaracteres, montant)) {</span>
+<span class="fc" id="L110">                return false;</span>
+            }
+            
+        }
+<span class="fc" id="L114">        return true;</span>
+    }
+   
+
+    private static boolean pasChiffres(int i, int n, String montant) {
+<span class="pc bpc" id="L119" title="1 of 8 branches missed.">        return i != n - 1 &amp;&amp; i != n - 4 &amp;&amp; (montant.charAt(i) &gt; '9' || montant.charAt(i) &lt; '0');</span>
+    }
+    
+
+    private static boolean pasDeSeparateurValide(int i, int n, String montant) {
+<span class="fc bfc" id="L124" title="All 6 branches covered.">        return i == n - 4 &amp;&amp; (montant.charAt(i) != '.' &amp;&amp; montant.charAt(i) != ',');</span>
+    }
+
+    
+    private static boolean pasDeSigneDollar(int i, int n, String montant) {
+<span class="pc bpc" id="L129" title="1 of 4 branches missed.">        return i == n - 1 &amp;&amp; montant.charAt(i) != '$';</span>
+    }
+    
+    
+    public boolean validerStringEnIntegerPositif(String nombre) {        
+        try {
+<span class="fc bfc" id="L135" title="All 2 branches covered.">          return Integer.parseInt(nombre)&gt;=0;  </span>
+<span class="fc" id="L136">        } catch (Exception e) {</span>
+<span class="fc" id="L137">          return false;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

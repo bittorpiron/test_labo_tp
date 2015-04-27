@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Soin.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Refund&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">org.equipe21.projetsession</a> &gt; <span class="el_source">Soin.java</span></div><h1>Soin.java</h1><pre class="source lang-java linenums">package org.equipe21.projetsession;
+
+import java.util.ArrayList;
+import java.util.List;
+/*
+ *   Les instances de cette classe gardent l'information de chaque categorie
+ *   de soin ainsi que les comptages par exécution (totalActuel, nbrTraitements)  
+ */
+
+public class Soin {
+
+<span class="fc" id="L12">    private List&lt;Integer&gt; numeros = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L13">    private String categorie = &quot;&quot;;</span>
+    private Dollar maximumMensuel;
+<span class="fc" id="L15">    private boolean centaine = false;</span>
+<span class="fc" id="L16">    private Dollar totalActuel = new Dollar(0.00);</span>
+<span class="fc" id="L17">    private Integer nbrTraitements = 0;</span>
+
+<span class="fc" id="L19">    public Soin(Integer numero, String categorie, String maximumMensuel) {</span>
+<span class="fc" id="L20">        this.numeros.add(numero);</span>
+<span class="fc" id="L21">        this.categorie = categorie;</span>
+<span class="fc" id="L22">        this.maximumMensuel = new Dollar(maximumMensuel);</span>
+<span class="fc" id="L23">    }</span>
+
+
+<span class="fc" id="L26">    public Soin(Integer numero, String categorie, String maximumMensuel, Boolean touteLaCentaine) {</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        for (int i = numero; i &lt; numero + 100; i++) {</span>
+<span class="fc" id="L28">            this.numeros.add(i);</span>
+        }
+<span class="fc" id="L30">        this.categorie = categorie;</span>
+<span class="fc" id="L31">        this.maximumMensuel = new Dollar(maximumMensuel);</span>
+<span class="fc" id="L32">    }</span>
+
+
+    public List&lt;Integer&gt; getNumeros() {
+<span class="fc" id="L36">        return numeros;</span>
+    }
+
+
+    public void setNumeros(List&lt;Integer&gt; numeros) {
+<span class="nc" id="L41">        this.numeros = numeros;</span>
+<span class="nc" id="L42">    }</span>
+
+
+    public String getCategorie() {
+<span class="fc" id="L46">        return categorie;</span>
+    }
+
+
+    public void setCategorie(String categorie) {
+<span class="nc" id="L51">        this.categorie = categorie;</span>
+<span class="nc" id="L52">    }</span>
+
+
+    public Dollar getMaximumMensuel() {
+<span class="fc" id="L56">        return maximumMensuel;</span>
+    }
+
+
+    public void setMaximumMensuel(Dollar maximumMensuel) {
+<span class="fc" id="L61">        this.maximumMensuel = maximumMensuel;</span>
+<span class="fc" id="L62">    }</span>
+
+
+    public boolean isCentaine() {
+<span class="nc" id="L66">        return centaine;</span>
+    }
+
+
+    public void setCentaine(boolean centaine) {
+<span class="nc" id="L71">        this.centaine = centaine;</span>
+<span class="nc" id="L72">    }</span>
+
+
+    public Dollar getTotalActuel() {
+<span class="fc" id="L76">        return totalActuel;</span>
+    }
+
+
+    public void setTotalActuel(Dollar totalActuel) {
+<span class="fc" id="L81">        this.totalActuel = totalActuel;</span>
+<span class="fc" id="L82">    }</span>
+
+
+    public Integer getNbrTraitements() {
+<span class="nc" id="L86">        return nbrTraitements;</span>
+    }
+
+
+    public void setNbrTraitements(Integer nbrTraitements) {
+<span class="fc" id="L91">        this.nbrTraitements = nbrTraitements;</span>
+<span class="fc" id="L92">    }</span>
+
+
+    public Dollar calculerMontantMensuel(Dollar nouveauMontant) {
+
+<span class="fc" id="L97">        nbrTraitements++;</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        if ((maximumMensuel.getTotalCents() &gt; 0)</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">                &amp;&amp; (Dollar.additionDollars(totalActuel, nouveauMontant).estPlusGrand(maximumMensuel))) {</span>
+
+<span class="fc" id="L101">            nouveauMontant = Dollar.soubstractionDollars(maximumMensuel, totalActuel);</span>
+<span class="fc" id="L102">            totalActuel = maximumMensuel;</span>
+        } else {
+<span class="fc" id="L104">            totalActuel.addition(nouveauMontant);</span>
+        }
+<span class="fc" id="L106">        return nouveauMontant;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

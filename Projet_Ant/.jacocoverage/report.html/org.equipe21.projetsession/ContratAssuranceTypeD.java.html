@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ContratAssuranceTypeD.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Refund&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">org.equipe21.projetsession</a> &gt; <span class="el_source">ContratAssuranceTypeD.java</span></div><h1>ContratAssuranceTypeD.java</h1><pre class="source lang-java linenums">/*
+ * @Copyright Victor Piron Mardones.
+ */
+package org.equipe21.projetsession;
+
+public final class ContratAssuranceTypeD extends ContratAssurance {
+
+    public ContratAssuranceTypeD() {
+<span class="fc" id="L9">        super();</span>
+<span class="fc" id="L10">        remplirTableIndemnites();</span>
+<span class="fc" id="L11">    }</span>
+
+    
+    //Pour chaque Soin, ajouter le pourcentage applicable et le montant maximal
+    @Override
+    void remplirTableIndemnites() {     
+<span class="fc" id="L17">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(0), 100, &quot;85.00$&quot;));</span>
+<span class="fc" id="L18">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(100), 100, &quot;75.00$&quot;));</span>
+<span class="fc" id="L19">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(150), 100, &quot;150.00$&quot;));</span>
+<span class="fc" id="L20">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(175), 95, &quot;0.00$&quot;));                    </span>
+<span class="fc" id="L21">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(200), 100, &quot;100.00$&quot;));</span>
+<span class="fc" id="L22">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(300), 100, &quot;0.00$&quot;));  </span>
+<span class="fc" id="L23">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(400), 100, &quot;65.00$&quot;));</span>
+<span class="fc" id="L24">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(500), 100, &quot;0.00$&quot;));    </span>
+<span class="fc" id="L25">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(600), 100, &quot;100.00$&quot;));</span>
+<span class="fc" id="L26">        ajouterIndemnites(new Indemnite(soinsAdmisibles.getSoinParNumero(700), 100, &quot;90.00$&quot;));  </span>
+
+<span class="fc" id="L28">    }    </span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

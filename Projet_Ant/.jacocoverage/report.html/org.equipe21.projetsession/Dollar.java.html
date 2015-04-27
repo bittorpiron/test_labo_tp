@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Dollar.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Refund&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">org.equipe21.projetsession</a> &gt; <span class="el_source">Dollar.java</span></div><h1>Dollar.java</h1><pre class="source lang-java linenums">package org.equipe21.projetsession;
+
+/*
+ * Classe qui contient toute la logique de manipulation monétaire.
+ */
+public class Dollar {
+    
+    private int totalCents;
+    
+<span class="fc" id="L10">    public Dollar() {</span>
+<span class="fc" id="L11">        totalCents = 0;</span>
+<span class="fc" id="L12">    }</span>
+    
+    
+<span class="fc" id="L15">    public Dollar(String montant) {</span>
+        //Enlever les caractères non numériques d'un montant déjà validé &quot;xxx.xx$&quot;
+<span class="fc" id="L17">        totalCents = Integer.parseInt(montant.replaceAll(&quot;[. , $]&quot;, &quot;&quot;));</span>
+<span class="fc" id="L18">    }</span>
+    
+    
+<span class="fc" id="L21">    public Dollar(double montant) {</span>
+<span class="fc" id="L22">        totalCents = (int) (montant * 100);</span>
+<span class="fc" id="L23">    }</span>
+
+    
+<span class="fc" id="L26">    public Dollar(int cents) {</span>
+<span class="fc" id="L27">        totalCents = cents;</span>
+<span class="fc" id="L28">    }</span>
+    
+    
+    public Double dollarToDouble() {
+<span class="fc" id="L32">        return Double.parseDouble(getDollars() + &quot;.&quot; + getCents());</span>
+    }
+    
+    
+    public int doubleToCents(double montant) {
+<span class="fc" id="L37">        return (int) (montant * 100);</span>
+    }
+    
+    
+    public int getTotalCents() {
+<span class="fc" id="L42">        return totalCents;</span>
+    }
+    
+    
+    public int getDollars() {
+<span class="fc" id="L47">        return totalCents/100;</span>
+    }
+    
+    
+    public int getCents() {
+<span class="fc" id="L52">        return totalCents%100;</span>
+    }
+    
+    
+    public Dollar getPourcentage(int pourcentage) {
+<span class="fc" id="L57">        return new Dollar( pourcentage * totalCents / 100);</span>
+    }
+
+    
+    public void setTotalCents(int montant) {
+<span class="nc" id="L62">        totalCents = montant;</span>
+<span class="nc" id="L63">    }</span>
+    
+    
+    public void setTotalCents(double montant) {
+<span class="nc" id="L67">        totalCents = (int) (montant * 100);</span>
+<span class="nc" id="L68">    }</span>
+    
+    
+    public static Dollar additionDollars(Dollar montant1, Dollar montant2) {
+<span class="fc" id="L72">        return new Dollar(montant1.getTotalCents() + montant2.getTotalCents());</span>
+    }
+    
+    
+    public void addition(double montant) {
+<span class="fc" id="L77">        totalCents = getTotalCents() + doubleToCents(montant);</span>
+<span class="fc" id="L78">    }</span>
+    
+    
+    public void addition(Dollar montant) {
+<span class="fc" id="L82">        totalCents = getTotalCents() + montant.getTotalCents();</span>
+<span class="fc" id="L83">    }</span>
+    
+    
+    public static Dollar soubstractionDollars(Dollar montant1, Dollar montant2) {
+<span class="fc" id="L87">        return new Dollar(montant1.getTotalCents() - montant2.getTotalCents());</span>
+    }
+    
+    
+    public void soustraction(double montant) {
+<span class="fc" id="L92">        totalCents = getTotalCents() - doubleToCents(montant);</span>
+<span class="fc" id="L93">    }</span>
+    
+    
+    public void soustraction(Dollar montant) {
+<span class="fc" id="L97">        totalCents = getTotalCents() - montant.getTotalCents();</span>
+<span class="fc" id="L98">    }    </span>
+    
+    
+    public Dollar multiplicationDollars(Dollar montant1, Dollar montant2) {
+<span class="nc" id="L102">        return new Dollar(montant1.getTotalCents() * montant2.getTotalCents());</span>
+    }
+    
+    
+    public void multiplication(int montant) {
+<span class="fc" id="L107">        totalCents = getTotalCents() * montant;</span>
+<span class="fc" id="L108">    }</span>
+    
+    
+    public void multiplication(Dollar montant) {
+<span class="fc" id="L112">        totalCents =(getTotalCents() * montant.getTotalCents())/100;</span>
+<span class="fc" id="L113">    }    </span>
+ 
+    
+    public Dollar divisionDollars(Dollar montant1, Dollar montant2) {
+<span class="nc" id="L117">        return new Dollar(montant1.getTotalCents() / montant2.getTotalCents());</span>
+    }
+    
+    
+    public void division(int montant) {
+<span class="fc" id="L122">        totalCents = getTotalCents() / montant;</span>
+<span class="fc" id="L123">    }</span>
+    
+    
+    public void division(Dollar montant) {
+<span class="fc" id="L127">        totalCents = (getTotalCents() * 100) / montant.getTotalCents();</span>
+<span class="fc" id="L128">    }</span>
+    
+    
+    public boolean estEgal(Dollar montant) {
+<span class="fc bfc" id="L132" title="All 2 branches covered.">        return getTotalCents() == montant.getTotalCents();</span>
+    }
+    
+    
+    public boolean estPlusPetit(Dollar montant) {
+<span class="fc bfc" id="L137" title="All 2 branches covered.">        return getTotalCents() &lt; montant.getTotalCents();</span>
+    }
+    
+    
+    public boolean estPlusPetitOuEgal(Dollar montant) {
+<span class="fc bfc" id="L142" title="All 2 branches covered.">        return getTotalCents() &lt;= montant.getTotalCents();</span>
+    }
+    
+    
+    public boolean estPlusGrand(Dollar montant) {
+<span class="fc bfc" id="L147" title="All 2 branches covered.">        return getTotalCents() &gt; montant.getTotalCents();</span>
+    }
+    
+    
+    public boolean estPlusGrandOuEgal(Dollar montant) {
+<span class="fc bfc" id="L152" title="All 2 branches covered.">        return getTotalCents() &gt;= montant.getTotalCents();</span>
+    }
+
+    
+    @Override
+    public int hashCode() {
+<span class="nc" id="L158">        int hash = 7;</span>
+<span class="nc" id="L159">        return hash;</span>
+    }
+
+
+    @Override
+    public boolean equals(Object autreObjet) {
+<span class="fc bfc" id="L165" title="All 2 branches covered.">        if (autreObjet == null) {</span>
+<span class="fc" id="L166">            return false;</span>
+        }
+<span class="fc bfc" id="L168" title="All 2 branches covered.">        if (getClass() != autreObjet.getClass()) {</span>
+<span class="fc" id="L169">            return false;</span>
+        }
+<span class="fc" id="L171">        final Dollar autreDollar = (Dollar) autreObjet;</span>
+<span class="fc bfc" id="L172" title="All 2 branches covered.">        return this.totalCents == autreDollar.totalCents;</span>
+    }    
+    
+    
+    @Override
+    public String toString() {
+<span class="fc" id="L178">        int cents = getCents();</span>
+<span class="fc" id="L179">        String chaineDollar = getDollars() + &quot;.&quot;;</span>
+<span class="fc bfc" id="L180" title="All 2 branches covered.">        if (cents &lt; 10){</span>
+<span class="fc" id="L181">            chaineDollar += &quot;0&quot;;</span>
+        }
+<span class="fc" id="L183">        return chaineDollar + getCents() + &quot;$&quot;;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

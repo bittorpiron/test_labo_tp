@@ -1,0 +1,6 @@
+/build/
+/nbproject/
+/dist/
+file1.json
+nbbuild.xml
+stats.json
