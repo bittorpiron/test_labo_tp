@@ -1,0 +1,179 @@
+body {
+    font-family: Arial;
+    line-height: 1.5;
+    font-size: 14px;
+    background: #36393D;
+    margin: 0;
+    padding: 0;
+}
+
+a { color: #0066cc; text-decoration: none;}
+a:hover { color: #880000; }
+
+h1 {
+    margin: 0;
+    padding-left: 20px;
+}
+h1 a { text-decoration: none; color: #F9F7ED; }
+h1 a:hover { border-bottom: 1px solid #F9F7ED; color: #F9F7ED; }
+
+#page {
+    width: 730px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+}
+
+header {
+    background: #2C2D2F;
+    height: 100px;
+    line-height: 100px;
+}
+
+nav {
+    background: #356AA0;
+    height: 30px;
+    line-height: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0px;
+}
+
+nav ul li {
+    display: block;
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0 10px 0 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: white;
+    background: #CF4D4F;
+}
+
+#content {
+    float: right;
+    width: 480px;
+    background: #F9F7ED;
+    margin-top: 20px;
+}
+#content h2 {
+    margin: 0;
+    color: #F9F7ED;
+    height: 30px;
+    line-height: 30px;
+    background: #2C2D2F;
+    padding: 0 0 0 10px;
+    font-size: 16px;
+}
+
+#content p { padding: 0 10px 10px 10px; color: #232323;}
+#content ul { padding: 0 20px 10px 30px; }
+
+#content form {
+    padding-left:12px;
+}
+
+#content label {
+    display:block;
+    width:120px;
+    float:left;
+}
+#content h3 {
+    padding-left:12px;
+}
+
+
+
+aside {
+    float: left;
+    margin-top: 20px;
+    width: 230px;
+    background: #eeeeee;
+    border-bottom: 5px solid #36393D;
+}
+
+aside h3 {
+    background: #2C2D2F;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0; padding: 0 0 0 10px;
+    color: #F9F7ED;
+}
+
+aside p { padding: 0 10px 10px 10px; color: #232323; }
+
+aside ul {
+    padding: 10px 0 20px 30px;
+    margin: 0;
+}
+
+aside ul li {
+    padding: 0;
+    margin: 0;
+}
+
+aside ul ul { padding: 2px 0 2px 20px; }
+
+.espacement{
+    clear:both;
+}
+
+#columns p { padding: 0 10px 10px 10px; color: #232323; }
+
+#columns h3 {
+    background: #2C2D2F;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 0 0; padding: 0 0 0 10px;
+    color: #F9F7ED;
+}
+
+#column1 {
+    float: left;
+    width: 230px;
+    background: #FFFF88;
+    margin-top: 20px;
+}
+#column2 {
+    float: left;
+    margin-left: 20px;
+    width: 230px;
+    background: #CDEB8B;
+    margin-top: 20px;
+}
+
+#column3 {
+    float: left;
+    margin-left: 20px;
+    width: 230px;
+    background: #C3D9FF;
+    margin-top: 20px;
+}
+
+footer {
+    background: #2C2D2F;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+footer p { padding: 0; margin: 0;
+    color: white;}
+footer a { color: white; }
+footer a:hover { text-decoration: underline; }
+
+
