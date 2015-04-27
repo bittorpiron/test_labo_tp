@@ -1,0 +1,73 @@
+
+.help-img-gauche {
+    float: right;    
+    margin-right: 250px;
+    border: 2px solid white;   
+    border-radius: 1em;
+}
+
+.help-img-droite {
+    float: right;    
+    margin-right: 120px;
+    border: 2px solid white;   
+    border-radius: 1em;
+}
+
+.help-img-3col {
+    float: right;    
+    margin-right: 90px;
+    border: 2px solid white;   
+    border-radius: 1em;
+}
+
+a.infobulle-gauche {
+    position: relative;
+}
+
+/* masquer l'infobulle. */
+a.infobulle-gauche span {
+   display: none; 
+}
+
+a.infobulle-gauche:hover {
+   cursor: help; 
+}
+
+/* afficher l'infobulle. */
+a.infobulle-gauche:hover span {    
+   display: inline; 
+   position: absolute;
+   margin-top: 30px; 
+   margin-left: 20px;
+   white-space: nowrap;   
+   padding: 5px;
+   color: #000000;
+   background: white;   
+   border: 1px solid bisque;
+}
+
+a.infobulle-droite {
+    position: relative;
+}
+
+/* masquer l'infobulle. */
+a.infobulle-droite span {
+   display: none; 
+}
+
+a.infobulle-droite:hover {
+   cursor: help; 
+}
+
+/* afficher l'infobulle. */
+a.infobulle-droite:hover span {    
+   display: inline; 
+   position: absolute;
+   margin-top: 30px; 
+   margin-left: 20px;
+   white-space: nowrap;   
+   padding: 5px;
+   color: #000000;
+   background: white;   
+   border: 1px solid bisque;
+}

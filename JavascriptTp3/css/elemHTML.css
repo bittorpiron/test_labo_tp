@@ -1,0 +1,165 @@
+/* style des objects html */ 
+
+.colDroite label {
+    padding-right: 10px;
+}
+
+input[type="checkbox"][name='diplome1'] {
+    padding-left: 5055px;
+}
+
+.colGauche input {
+    width: 280px;
+    margin-bottom: 10px;    
+}
+
+.diplomesUniversitaires{
+    width: 95%;    
+    padding: 20px 20px;
+    text-align: justify;
+}
+
+.diplomesUniversitaires p{
+    margin-top: 5px;
+    margin-bottom:  5px;
+}
+
+.diplomesUniversitaires input[type="text"]{
+    width: 280px;
+    margin-bottom: 10px;  
+
+}
+
+.emplois{
+    width: 95%;
+    padding: 20px 20px;
+    text-align: justify;
+}
+
+.emplois p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.emplois td{
+    padding: 5px 10px;
+    /*padding-right: 20px;*/
+}
+
+#statusbox2 input {
+    width: 157px;
+}
+
+nav h2{
+    float: left;
+    margin-top: 12px;    
+    padding-left: 10px;
+    color: #ffffff;
+}
+
+nav img {
+    float: right;
+    margin-top: 5px;
+    padding-right: 10px;
+    height: 40px;
+
+}
+
+footer img {
+    float: left;
+    margin-top: 5px;
+    padding-left: 10px;    
+    height: 40px;
+}
+
+.compteurDuFormulaire{}
+
+#tel td{
+    padding-right: 5px;
+}
+
+p>label{
+    font-size: 10pt;
+}
+
+button, input#submitbouton , input#resetbouton{
+    float: right;
+    cursor:pointer;
+    padding:5px 25px; 
+    background:#0076bf;
+    border:1px solid #33842a; 
+    border-radius: 1px;
+    box-shadow: 0 0 4px rgba(0,0,0, .75);
+    color:#f3f3f3;
+    font-size:18px;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button:hover, button:focus,
+input#submitbouton:hover, input#submitbouton:focus,
+input#resetbouton:hover, input#resetbouton:focus
+{
+    background-color :#4cff00; 
+    box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+
+.linkeffacer{
+    float: left;
+    font-size: 18px;    
+    color:#f3f3f3;
+    text-decoration: none;
+    padding:5px 15px; 
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;    
+    cursor:pointer;    
+    background:#0076bf;
+    border:1px solid #33842a; 
+    border-radius: 1px;
+    box-shadow: 0 0 4px rgba(0,0,0, .75);            
+}
+
+.linkeffacer:hover{
+    background-color :#ff0000; 
+    box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+
+input {
+    margin-bottom: 5px;
+    padding: 2px 1px;
+    border-radius:3px;   
+    border: 1px #ccc solid;
+}
+
+input:focus{
+    padding: 2px 1px;
+    outline:none;
+    box-shadow: 0 0 15px rgba(36, 180, 215, 0.4);
+}
+
+select{
+    border-radius:3px;
+    border: 1px #ccc solid;
+    width: 165px;
+    padding: 2px 2px;
+    box-shadow: 0 0 0px rgba(36, 180, 215, 0.4)
+}
+
+select:focus{
+    outline:none;
+    box-shadow: 0 0 20px rgba(36, 180, 215, 0.4);
+}
+
+textarea {
+    border-radius:3px;
+    border: 1px #ccc solid;
+    padding: 5px 5px; 
+}
+
+textarea:focus{
+    outline:none;
+    box-shadow: 0 0 15px rgba(36, 180, 215, 0.7);
+}
+
