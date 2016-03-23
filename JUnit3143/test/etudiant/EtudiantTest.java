@@ -15,7 +15,6 @@
  */
 package etudiant;
 
-import static com.sun.xml.internal.fastinfoset.stax.events.EmptyIterator.instance;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
