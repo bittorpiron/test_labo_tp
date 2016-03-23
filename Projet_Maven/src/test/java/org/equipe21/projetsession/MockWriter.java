@@ -1,5 +1,7 @@
 package org.equipe21.projetsession;
 
+import org.equipe21.projetsession.WriterWrapper;
+
 public class MockWriter extends WriterWrapper{
     
     private String writtenData = "";
